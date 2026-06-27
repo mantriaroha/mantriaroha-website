@@ -160,13 +160,6 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   );
 }
 
-function ServiceIllustration({ Icon }: { Icon: typeof Video }) {
-  return (
-    <div className="grid aspect-square w-full place-items-center rounded-[12px] bg-secondary text-primary">
-      <Icon className="h-16 w-16" strokeWidth={1.4} />
-    </div>
-  );
-}
 
 function Header() {
   return (
