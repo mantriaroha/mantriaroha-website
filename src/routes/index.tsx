@@ -11,6 +11,7 @@ import {
   MessageCircle,
   Phone,
   Quote,
+
   ShieldCheck,
   Stethoscope,
   User as UserIcon,
@@ -41,6 +42,12 @@ import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
 import serviceOnline from "@/assets/service-online.png.asset.json";
 import serviceClinic from "@/assets/service-clinic.png.asset.json";
 import servicePft from "@/assets/service-pft.png.asset.json";
+import libAsthma from "@/assets/lib-asthma.png.asset.json";
+import libCopd from "@/assets/lib-copd.png.asset.json";
+import libCough from "@/assets/lib-cough.png.asset.json";
+import libAllergy from "@/assets/lib-allergy.png.asset.json";
+import libSmoking from "@/assets/lib-smoking.png.asset.json";
+import libPft from "@/assets/lib-pft.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -117,12 +124,12 @@ const SERVICES = [
 
 
 const LIBRARY = [
-  { icon: Wind, label: "What is Asthma?" },
-  { icon: Wind, label: "What is COPD?" },
-  { icon: UserIcon, label: "Chronic Cough" },
-  { icon: Leaf, label: "Allergy & Breathing Problems" },
-  { icon: Cigarette, label: "Quit Smoking" },
-  { icon: Activity, label: "Pulmonary Function Test" },
+  { img: libAsthma.url, label: "What is Asthma?" },
+  { img: libCopd.url, label: "What is COPD?" },
+  { img: libCough.url, label: "Chronic Cough" },
+  { img: libAllergy.url, label: "Allergy & Breathing Problems" },
+  { img: libSmoking.url, label: "Quit Smoking" },
+  { img: libPft.url, label: "Pulmonary Function Test" },
 ];
 
 const SYMPTOMS = [
@@ -408,8 +415,8 @@ function LibrarySection() {
             href="#library"
             className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-3 text-[13px] font-semibold leading-tight text-primary transition-colors hover:border-primary hover:bg-secondary"
           >
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
-              <l.icon className="h-6 w-6" strokeWidth={1.4} />
+            <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15">
+              <img src={l.img} alt="" className="h-11 w-11 object-contain" loading="lazy" />
             </span>
             <span>{l.label}</span>
           </a>
