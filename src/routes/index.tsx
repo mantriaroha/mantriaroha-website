@@ -223,42 +223,41 @@ function Header() {
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-8 md:grid-cols-2 md:items-center md:px-8 md:py-10">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-5 md:grid-cols-2 md:items-center md:gap-8 md:px-8 md:py-6">
         <div className="order-2 md:order-1">
-          <div className="mb-5 flex items-center gap-3 text-primary">
-            <LungMark className="h-8 w-8" />
+          <div className="mb-3 flex items-center gap-2 text-primary">
+            <LungMark className="h-6 w-6" />
             <span className="text-sm font-medium">A practice built on compassion</span>
           </div>
-          <div className="mb-5 h-px w-16 bg-primary/40" />
-          <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-6xl">
+          <h1 className="font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-5xl">
             Helping you breathe<br className="hidden sm:block" /> better every day
           </h1>
-          <p className="mt-6 text-base text-foreground/80 md:text-lg">Evidence-based care for</p>
-          <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-2 text-base text-foreground md:text-lg">
+          <p className="mt-4 text-sm font-medium text-foreground/80">Evidence-based care for</p>
+          <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-sm text-foreground md:text-base">
             {CONDITIONS.map((c, i) => (
-              <li key={c} className="flex items-center gap-3">
+              <li key={c} className="flex items-center gap-2">
                 {i > 0 && <span className="text-primary">•</span>}
                 <span>{c}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-14 rounded-[10px] px-6 text-base">
+          <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+            <Button asChild size="lg" className="h-12 rounded-[10px] px-5">
               <a href={BOOK_HREF}>
-                <Video className="mr-2 h-5 w-5" />
+                <Video className="mr-2 h-4 w-4" />
                 <span className="flex flex-col items-start leading-tight">
-                  <span>Online Consultation</span>
-                  <span className="text-xs opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
+                  <span className="text-sm font-semibold">Online Consultation</span>
+                  <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
                 </span>
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 rounded-[10px] border-primary px-6 text-base text-primary hover:bg-secondary">
+            <Button asChild variant="outline" size="lg" className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary">
               <a href={BOOK_HREF}>
-                <Stethoscope className="mr-2 h-5 w-5" />
+                <Stethoscope className="mr-2 h-4 w-4" />
                 <span className="flex flex-col items-start leading-tight">
-                  <span>Book Clinic Visit</span>
-                  <span className="text-xs opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
+                  <span className="text-sm font-semibold">Book Clinic Visit</span>
+                  <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
                 </span>
               </a>
             </Button>
@@ -266,34 +265,20 @@ function Hero() {
         </div>
 
         <div className="order-1 md:order-2">
-          <DoctorPortrait />
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-[14px] border-4 border-background bg-secondary shadow-xl md:aspect-[5/4]">
+            <img
+              src={doctorPhoto.url}
+              alt="Dr Mantri Vijaya Bhaskar"
+              className="h-full w-full object-cover object-top"
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function TrustStrip() {
-  return (
-    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-4">
-      <div className="rounded-[10px] border border-border bg-card p-5 shadow-sm md:p-6">
-        <ul className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border">
-          {TRUST.map((t) => (
-            <li key={t.label} className="flex items-center justify-center gap-3 md:px-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-primary">
-                <t.icon className="h-6 w-6" />
-              </span>
-              <span className="min-w-0 text-sm leading-tight text-foreground">
-                <span className="block font-medium">{t.label}</span>
-                <span className="block text-muted-foreground">{t.sub}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
 
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
