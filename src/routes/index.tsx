@@ -92,25 +92,29 @@ const TRUST = [
 
 const SERVICES = [
   {
-    icon: Video,
+    image: serviceOnline.url,
+    imageClass: "object-contain",
     title: "Online Consultation",
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
   },
   {
-    icon: Stethoscope,
+    image: serviceClinic.url,
+    imageClass: "object-cover",
     title: "In-Clinic Consultation",
     titleTe: "క్లినిక్‌లో సంప్రదింపులు",
     desc: "Personalized evaluation and treatment with advanced diagnostic facilities.",
   },
   {
-    icon: Activity,
+    image: servicePft.url,
+    imageClass: "object-cover",
     title: "PFT",
     titleSub: "(Pulmonary Function Test / Spirometry)",
     titleTe: "ఊపిరితిత్తుల పనితీరును పరీక్షించే విధానం",
     desc: "Assess your lung function accurately with advanced spirometry testing.",
   },
 ];
+
 
 const LIBRARY = [
   { icon: Wind, label: "What is Asthma?" },
