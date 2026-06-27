@@ -42,6 +42,12 @@ import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
 import serviceOnline from "@/assets/service-online.png.asset.json";
 import serviceClinic from "@/assets/service-clinic.png.asset.json";
 import servicePft from "@/assets/service-pft.png.asset.json";
+import libAsthma from "@/assets/lib-asthma.png.asset.json";
+import libCopd from "@/assets/lib-copd.png.asset.json";
+import libCough from "@/assets/lib-cough.png.asset.json";
+import libAllergy from "@/assets/lib-allergy.png.asset.json";
+import libSmoking from "@/assets/lib-smoking.png.asset.json";
+import libPft from "@/assets/lib-pft.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
