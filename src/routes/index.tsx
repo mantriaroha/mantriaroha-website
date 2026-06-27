@@ -374,13 +374,13 @@ function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
     <section id="services" className="mx-auto max-w-7xl px-3 pb-6 md:px-8 md:pb-10">
-      <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
+      <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_300px] lg:gap-5">
         {SERVICES.map((s) => (
           <Card
             key={s.title}
-            className="flex flex-col gap-3 overflow-hidden rounded-[12px] border-border p-3 shadow-sm sm:p-4 lg:flex-row lg:gap-4"
+            className="flex w-[85vw] min-w-[280px] shrink-0 flex-row gap-3 overflow-hidden rounded-[12px] border-border p-3 shadow-sm sm:w-auto sm:min-w-0 sm:flex-col sm:p-4 lg:flex-row lg:gap-4"
           >
-            <div className="h-36 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
+            <div className="h-auto w-[40%] shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 sm:w-full lg:h-auto lg:w-[42%]">
               <img
                 src={s.image}
                 alt={s.title}
@@ -388,26 +388,28 @@ function Services() {
                 loading="lazy"
               />
             </div>
-            <div className="flex min-w-0 flex-1 flex-col items-center text-center lg:items-start lg:text-left">
-              <h3 className="font-serif text-base font-semibold leading-tight text-primary sm:text-lg">
-                {s.title}
-              </h3>
-              {s.titleSub && (
-                <p className="mt-0.5 text-[11px] leading-snug text-primary/80">{s.titleSub}</p>
-              )}
-              <p className="mt-1 text-[12px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
+            <div className="flex min-w-0 flex-1 flex-col justify-between text-left">
+              <div>
+                <h3 className="font-serif text-base font-semibold leading-tight text-primary sm:text-lg">
+                  {s.title}
+                </h3>
+                {s.titleSub && (
+                  <p className="mt-0.5 text-[11px] leading-snug text-primary/80">{s.titleSub}</p>
+                )}
+                <p className="mt-1 text-[12px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
+                <p className="mt-2 text-[12px] leading-snug text-muted-foreground sm:text-[13px]">{s.desc}</p>
+              </div>
               <Button
                 asChild
-                className="mt-2 h-9 rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em] lg:mt-2 lg:self-start"
+                className="mt-3 h-9 self-start rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em] sm:mt-2"
               >
                 <a href={BOOK_HREF}>BOOK NOW</a>
               </Button>
-              <p className="mt-2 text-[12px] leading-snug text-muted-foreground sm:text-[13px] lg:mt-2">{s.desc}</p>
             </div>
           </Card>
         ))}
 
-        <Card className="relative flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-6 shadow-sm">
+        <Card className="relative w-[85vw] min-w-[280px] shrink-0 flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-4 shadow-sm sm:w-auto sm:min-w-0 sm:p-6">
           <h3 className="font-serif text-xl font-semibold text-primary">Are you experiencing?</h3>
           <ul className="mt-4 space-y-3">
             {SYMPTOMS.map((s) => (
