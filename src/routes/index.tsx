@@ -34,6 +34,10 @@ import {
 } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
 import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
+import iconLungs from "@/assets/icon-lungs.png.asset.json";
+import iconFamily from "@/assets/icon-family.png.asset.json";
+import iconClipboard from "@/assets/icon-clipboard.png.asset.json";
+import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
