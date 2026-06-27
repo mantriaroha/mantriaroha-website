@@ -391,9 +391,9 @@ function LibrarySection() {
 function About() {
   return (
     <section id="about" className="mx-auto max-w-7xl px-4 pb-12 md:px-8 md:pb-16">
-      <Card className="grid gap-6 rounded-[10px] border-border p-6 shadow-sm md:grid-cols-[220px_1fr_320px] md:items-center md:p-8">
-        <div className="mx-auto w-40 md:w-full">
-          <DoctorPortrait />
+      <Card className="grid gap-6 rounded-[12px] border-border p-6 shadow-sm md:grid-cols-[240px_1fr_320px] md:items-center md:p-8">
+        <div className="mx-auto w-44 md:w-full">
+          <DoctorPortrait shape="square" />
         </div>
         <div>
           <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
