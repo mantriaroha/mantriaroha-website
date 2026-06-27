@@ -341,18 +341,24 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-3 py-3 md:px-8 md:py-4">
-      <div className="rounded-[10px] border border-border bg-card p-3 shadow-sm md:p-6">
-        <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border">
+    <section className="mx-auto max-w-7xl px-3 py-2 md:px-8 md:py-4">
+      <div className="rounded-[10px] border border-border bg-card shadow-sm md:p-6">
+        {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
+        <ul className="flex gap-3 overflow-x-auto px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:p-0 md:divide-x md:divide-border">
           {TRUST.map((t) => (
             <li
               key={t.label}
-              className="flex items-center justify-start gap-2 md:justify-center md:gap-4 md:px-6"
+              className="flex shrink-0 items-center gap-2 md:shrink md:justify-center md:gap-4 md:px-6"
             >
-              <span className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15 md:h-14 md:w-14">
-                <img src={t.img} alt="" className="h-9 w-9 object-contain md:h-12 md:w-12" loading="lazy" />
+              <span className="grid h-8 w-8 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15 md:h-14 md:w-14">
+                <img
+                  src={t.img}
+                  alt=""
+                  className="h-7 w-7 object-contain md:h-12 md:w-12"
+                  loading="lazy"
+                />
               </span>
-              <span className="min-w-0 text-[11px] leading-tight text-foreground md:text-[15px]">
+              <span className="min-w-0 whitespace-nowrap text-[10px] leading-tight text-foreground md:whitespace-normal md:text-[15px]">
                 <span className="block font-medium">{t.label}</span>
                 <span className="block font-medium">{t.sub}</span>
               </span>
