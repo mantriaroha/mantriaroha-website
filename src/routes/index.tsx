@@ -555,35 +555,45 @@ function Footer() {
     },
   ];
   return (
-    <footer id="contact" className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-4">
-        <ul className="grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-0 md:divide-x md:divide-border">
+    <footer
+      id="contact"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card shadow-[0_-4px_12px_rgba(0,0,0,0.06)] md:static md:shadow-none"
+    >
+      <div className="mx-auto max-w-7xl px-2 py-2 md:px-8 md:py-4">
+        <ul className="grid grid-cols-4 gap-1 md:grid-cols-5 md:gap-0 md:divide-x md:divide-border">
           {actions.map((a) => (
-            <li key={a.label}>
+            <li
+              key={a.label}
+              className={a.label === "Email" ? "hidden md:list-item" : ""}
+            >
               <a
                 href={a.href}
-                className="flex items-center gap-3 rounded-[10px] p-2 text-left transition-colors hover:bg-secondary md:px-4"
+                className="flex flex-col items-center gap-1 rounded-[10px] p-1 text-center transition-colors hover:bg-secondary md:flex-row md:gap-3 md:p-2 md:px-4 md:text-left"
               >
                 <span
-                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
+                  className="grid h-9 w-9 shrink-0 place-items-center rounded-full md:h-11 md:w-11"
                   style={
                     a.color === "transparent"
                       ? undefined
                       : { backgroundColor: a.color, color: "#fff" }
                   }
                 >
-                  <a.icon className="h-6 w-6" />
+                  <a.icon className="h-5 w-5 md:h-6 md:w-6" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-sm font-semibold text-foreground">{a.label}</span>
-                  <span className="block truncate text-xs text-muted-foreground">{a.sub}</span>
+                  <span className="block text-[11px] font-semibold leading-tight text-foreground md:text-sm">
+                    {a.label}
+                  </span>
+                  <span className="hidden truncate text-xs text-muted-foreground md:block">
+                    {a.sub}
+                  </span>
                 </span>
               </a>
             </li>
           ))}
         </ul>
       </div>
-      <div className="bg-primary text-primary-foreground">
+      <div className="hidden bg-primary text-primary-foreground md:block">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:px-8">
           <p>© 2024 Mantri Aroha Clinic. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 opacity-90">
