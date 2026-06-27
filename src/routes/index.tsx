@@ -415,8 +415,8 @@ function LibrarySection() {
             href="#library"
             className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-3 text-[13px] font-semibold leading-tight text-primary transition-colors hover:border-primary hover:bg-secondary"
           >
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
-              <l.icon className="h-6 w-6" strokeWidth={1.4} />
+            <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15">
+              <img src={l.img} alt="" className="h-11 w-11 object-contain" loading="lazy" />
             </span>
             <span>{l.label}</span>
           </a>
