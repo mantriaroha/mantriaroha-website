@@ -5,6 +5,7 @@ import {
   CalendarCheck,
   ClipboardList,
   Leaf,
+
   MapPin,
   Menu,
   MessageCircle,
@@ -32,6 +33,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
+import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -265,15 +267,23 @@ function Hero() {
         </div>
 
         <div className="order-1 md:order-2">
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-[14px] border-4 border-background bg-secondary shadow-xl md:aspect-[5/4]">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-sm">
+            {/* Soft circular backdrop pattern */}
+            <div className="absolute inset-0 grid place-items-center" aria-hidden>
+              <div className="h-[88%] w-[88%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+            </div>
+            <div className="absolute inset-x-6 bottom-2 top-6 grid place-items-center" aria-hidden>
+              <div className="h-full w-full rounded-full border border-primary/15" />
+            </div>
             <img
-              src={doctorPhoto.url}
+              src={doctorTransparent.url}
               alt="Dr Mantri Vijaya Bhaskar"
-              className="h-full w-full object-cover object-top"
+              className="relative h-full w-full object-contain object-bottom"
               loading="eager"
             />
           </div>
         </div>
+
       </div>
     </section>
   );
