@@ -130,15 +130,26 @@ function LungMark({ className = "h-10 w-10" }: { className?: string }) {
   );
 }
 
-function DoctorPortrait() {
+function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
+  const radius = shape === "circle" ? "rounded-full" : "rounded-[14px]";
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-4 border-background bg-secondary shadow-xl">
+    <div
+      className={`relative mx-auto aspect-square w-full max-w-md overflow-hidden border-4 border-background bg-secondary shadow-xl ${radius}`}
+    >
       <img
         src={doctorPhoto.url}
         alt="Dr Mantri Vijaya Bhaskar"
         className="h-full w-full object-cover object-top"
         loading="eager"
       />
+    </div>
+  );
+}
+
+function ServiceIllustration({ Icon }: { Icon: typeof Video }) {
+  return (
+    <div className="grid aspect-square w-full place-items-center rounded-[12px] bg-secondary text-primary">
+      <Icon className="h-16 w-16" strokeWidth={1.4} />
     </div>
   );
 }
@@ -285,63 +296,37 @@ function TrustStrip() {
 }
 
 function Services() {
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 pb-8 md:px-8 md:pb-10">
-      <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+      <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_320px] lg:gap-6">
         {SERVICES.map((s) => (
-          <Card key={s.title} className="flex flex-col gap-5 rounded-[10px] border-border p-6 shadow-sm">
-            <div className="grid h-20 w-20 place-items-center rounded-[10px] bg-secondary text-primary">
-              <s.icon className="h-10 w-10" strokeWidth={1.6} />
+          <Card
+            key={s.title}
+            className="flex flex-col gap-4 rounded-[12px] border-border p-5 shadow-sm"
+          >
+            <div className="grid gap-4 sm:grid-cols-[140px_1fr] lg:grid-cols-1">
+              <ServiceIllustration Icon={s.icon} />
+              <div className="flex flex-col">
+                <h3 className="font-serif text-xl font-semibold text-primary md:text-2xl">
+                  {s.title}
+                  {s.titleSub && (
+                    <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
+                      {s.titleSub}
+                    </span>
+                  )}
+                </h3>
+                <p className="mt-1 text-sm text-foreground/80">{s.titleTe}</p>
+                <Button asChild className="mt-3 h-11 rounded-[10px] text-xs font-semibold tracking-[0.12em]">
+                  <a href={BOOK_HREF}>BOOK NOW</a>
+                </Button>
+              </div>
             </div>
-            <div>
-              <h3 className="font-serif text-2xl font-semibold text-primary">
-                {s.title}
-                {s.titleSub && (
-                  <span className="ml-1 block text-sm font-normal text-muted-foreground">{s.titleSub}</span>
-                )}
-              </h3>
-              <p className="mt-1 text-sm text-foreground/80">{s.titleTe}</p>
-            </div>
-            <Button asChild className="h-12 rounded-[10px] text-sm font-semibold tracking-wide">
-              <a href={BOOK_HREF}>BOOK NOW</a>
-            </Button>
             <p className="text-sm text-muted-foreground">{s.desc}</p>
           </Card>
         ))}
-      </div>
-    </section>
-  );
-}
 
-function LibraryAndSymptoms() {
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
-  return (
-    <section className="mx-auto max-w-7xl px-4 pb-10 md:px-8 md:pb-14">
-      <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
-        <div id="library">
-          <div className="mb-4 flex items-end justify-between gap-4">
-            <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">Lung Health Library</h2>
-            <a href="#library" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-              View all articles <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {LIBRARY.map((l) => (
-              <a
-                key={l.label}
-                href="#library"
-                className="flex items-center gap-3 rounded-[10px] border border-border bg-card p-4 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-secondary"
-              >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
-                  <l.icon className="h-5 w-5" />
-                </span>
-                <span className="leading-tight">{l.label}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <Card className="rounded-[10px] border-border p-6 shadow-sm">
+        <Card className="relative flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-6 shadow-sm">
           <h3 className="font-serif text-xl font-semibold text-primary">Are you experiencing?</h3>
           <ul className="mt-4 space-y-3">
             {SYMPTOMS.map((s) => (
@@ -350,6 +335,7 @@ function LibraryAndSymptoms() {
                   id={`sx-${s}`}
                   checked={!!checked[s]}
                   onCheckedChange={(v) => setChecked((p) => ({ ...p, [s]: !!v }))}
+                  className="border-primary/40 data-[state=checked]:bg-primary"
                 />
                 <label htmlFor={`sx-${s}`} className="text-sm text-foreground">
                   {s}
@@ -357,13 +343,46 @@ function LibraryAndSymptoms() {
               </li>
             ))}
           </ul>
-          <Button asChild className="mt-5 h-12 w-full rounded-[10px]">
+          <Button asChild className="mt-auto h-11 w-full rounded-[10px]">
             <a href={BOOK_HREF}>
               <CalendarCheck className="mr-2 h-5 w-5" />
               Book a consultation
             </a>
           </Button>
+          <Leaf className="pointer-events-none absolute -bottom-3 -right-3 h-20 w-20 rotate-12 text-primary/15" />
         </Card>
+      </div>
+    </section>
+  );
+}
+
+function LibrarySection() {
+  return (
+    <section id="library" className="mx-auto max-w-7xl px-4 pb-10 md:px-8 md:pb-14">
+      <div className="mb-4 flex items-end justify-between gap-4">
+        <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
+          Lung Health Library
+        </h2>
+        <a
+          href="#library"
+          className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+        >
+          View all articles <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        {LIBRARY.map((l) => (
+          <a
+            key={l.label}
+            href="#library"
+            className="flex flex-col items-start gap-3 rounded-[12px] border border-border bg-card p-4 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-secondary"
+          >
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
+              <l.icon className="h-5 w-5" />
+            </span>
+            <span className="leading-tight">{l.label}</span>
+          </a>
+        ))}
       </div>
     </section>
   );
@@ -372,9 +391,9 @@ function LibraryAndSymptoms() {
 function About() {
   return (
     <section id="about" className="mx-auto max-w-7xl px-4 pb-12 md:px-8 md:pb-16">
-      <Card className="grid gap-6 rounded-[10px] border-border p-6 shadow-sm md:grid-cols-[220px_1fr_320px] md:items-center md:p-8">
-        <div className="mx-auto w-40 md:w-full">
-          <DoctorPortrait />
+      <Card className="grid gap-6 rounded-[12px] border-border p-6 shadow-sm md:grid-cols-[240px_1fr_320px] md:items-center md:p-8">
+        <div className="mx-auto w-44 md:w-full">
+          <DoctorPortrait shape="square" />
         </div>
         <div>
           <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
@@ -460,7 +479,7 @@ function HomePage() {
         <Hero />
         <TrustStrip />
         <Services />
-        <LibraryAndSymptoms />
+        <LibrarySection />
         <About />
       </main>
       <Footer />
