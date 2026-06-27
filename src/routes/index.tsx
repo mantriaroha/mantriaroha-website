@@ -38,6 +38,10 @@ import iconLungs from "@/assets/icon-lungs.png.asset.json";
 import iconFamily from "@/assets/icon-family.png.asset.json";
 import iconClipboard from "@/assets/icon-clipboard.png.asset.json";
 import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
+import serviceOnline from "@/assets/service-online.png.asset.json";
+import serviceClinic from "@/assets/service-clinic.png.asset.json";
+import servicePft from "@/assets/service-pft.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
