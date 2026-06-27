@@ -256,7 +256,7 @@ function Hero() {
     <section className="bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-6">
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
-        <div className="grid grid-cols-[1fr_44%] items-start gap-3 md:grid-cols-2 md:items-center md:gap-8">
+        <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
             <div className="flex items-center gap-2 text-primary">
               <LungMark className="h-5 w-5 md:h-6 md:w-6" />
