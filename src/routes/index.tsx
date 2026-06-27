@@ -413,15 +413,16 @@ function LibrarySection() {
           <a
             key={l.label}
             href="#library"
-            className="flex flex-col items-start gap-3 rounded-[12px] border border-border bg-card p-4 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-secondary"
+            className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-3 text-[13px] font-semibold leading-tight text-primary transition-colors hover:border-primary hover:bg-secondary"
           >
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
-              <l.icon className="h-5 w-5" />
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] bg-secondary text-primary">
+              <l.icon className="h-6 w-6" strokeWidth={1.4} />
             </span>
-            <span className="leading-tight">{l.label}</span>
+            <span>{l.label}</span>
           </a>
         ))}
       </div>
+
     </section>
   );
 }
