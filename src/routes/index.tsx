@@ -33,6 +33,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
+import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
