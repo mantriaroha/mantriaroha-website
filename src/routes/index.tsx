@@ -124,12 +124,12 @@ const SERVICES = [
 
 
 const LIBRARY = [
-  { icon: Wind, label: "What is Asthma?" },
-  { icon: Wind, label: "What is COPD?" },
-  { icon: UserIcon, label: "Chronic Cough" },
-  { icon: Leaf, label: "Allergy & Breathing Problems" },
-  { icon: Cigarette, label: "Quit Smoking" },
-  { icon: Activity, label: "Pulmonary Function Test" },
+  { img: libAsthma.url, label: "What is Asthma?" },
+  { img: libCopd.url, label: "What is COPD?" },
+  { img: libCough.url, label: "Chronic Cough" },
+  { img: libAllergy.url, label: "Allergy & Breathing Problems" },
+  { img: libSmoking.url, label: "Quit Smoking" },
+  { img: libPft.url, label: "Pulmonary Function Test" },
 ];
 
 const SYMPTOMS = [
