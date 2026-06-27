@@ -381,20 +381,21 @@ function LibrarySection() {
           View all articles <ArrowRight className="h-4 w-4" />
         </a>
       </div>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {LIBRARY.map((l) => (
           <a
             key={l.label}
             href="#library"
-            className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-3 text-[13px] font-semibold leading-tight text-primary transition-colors hover:border-primary hover:bg-secondary"
+            className="flex items-center gap-4 rounded-[12px] border border-border bg-card p-4 text-[14px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary"
           >
-            <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15">
-              <img src={l.img} alt="" className="h-11 w-11 object-contain" loading="lazy" />
+            <span className="grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15">
+              <img src={l.img} alt="" className="h-12 w-12 object-contain" loading="lazy" />
             </span>
             <span>{l.label}</span>
           </a>
         ))}
       </div>
+
 
     </section>
   );
