@@ -297,15 +297,15 @@ function TrustStrip() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-4">
       <div className="rounded-[10px] border border-border bg-card p-5 shadow-sm md:p-6">
-        <ul className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border">
+        <ul className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border">
           {TRUST.map((t) => (
-            <li key={t.label} className="flex items-center justify-center gap-3 md:px-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-primary">
-                <t.icon className="h-6 w-6" />
+            <li key={t.label} className="flex items-center justify-center gap-4 md:px-6">
+              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-secondary/60 ring-1 ring-primary/15 overflow-hidden">
+                <img src={t.img} alt="" className="h-12 w-12 object-contain" loading="lazy" />
               </span>
-              <span className="min-w-0 text-sm leading-tight text-foreground">
+              <span className="min-w-0 text-[15px] leading-tight text-foreground">
                 <span className="block font-medium">{t.label}</span>
-                <span className="block text-muted-foreground">{t.sub}</span>
+                <span className="block font-medium">{t.sub}</span>
               </span>
             </li>
           ))}
