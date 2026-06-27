@@ -1,38 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  Activity,
-  CalendarCheck,
-  ClipboardList,
-  Leaf,
-
-  MapPin,
-  Menu,
-  MessageCircle,
-  Phone,
-  Quote,
-
-  ShieldCheck,
-  Stethoscope,
-  User as UserIcon,
-  Users,
-  Video,
-  Wind,
-  Youtube,
-  Mail,
-  Cigarette,
-  ArrowRight,
-} from "lucide-react";
+import { Activity, CalendarCheck, ClipboardList, Leaf, MapPin, Menu, MessageCircle, Phone, Quote, ShieldCheck, Stethoscope, User as UserIcon, Users, Video, Wind, Youtube, Mail, Cigarette, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
 import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
 import iconLungs from "@/assets/icon-lungs.png.asset.json";
@@ -48,6 +20,7 @@ import libCough from "@/assets/lib-cough.png.asset.json";
 import libAllergy from "@/assets/lib-allergy.png.asset.json";
 import libSmoking from "@/assets/lib-smoking.png.asset.json";
 import libPft from "@/assets/lib-pft.png.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
