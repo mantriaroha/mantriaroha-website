@@ -617,7 +617,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Header />
-      <main>
+      <main className="pb-24 md:pb-0">
         <Hero />
         <TrustStrip />
         <Services />
