@@ -31,8 +31,8 @@ import iconLungs from "@/assets/icon-lungs.png.asset.json";
 import iconFamily from "@/assets/icon-family.png.asset.json";
 import iconClipboard from "@/assets/icon-clipboard.png.asset.json";
 import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
-import serviceOnline from "@/assets/service-online.png.asset.json";
-import serviceClinic from "@/assets/service-clinic.png.asset.json";
+import serviceOnline from "@/assets/service-online-v2.png.asset.json";
+import serviceClinic from "@/assets/service-clinic-v2.png.asset.json";
 import servicePft from "@/assets/service-pft.png.asset.json";
 import libAsthma from "@/assets/lib-asthma.png.asset.json";
 import libCopd from "@/assets/lib-copd.png.asset.json";
@@ -98,7 +98,7 @@ const SERVICES = [
   },
   {
     image: serviceClinic.url,
-    imageClass: "object-cover",
+    imageClass: "object-contain",
     title: "In-Clinic Consultation",
     titleTe: "క్లినిక్‌లో సంప్రదింపులు",
     desc: "Personalized evaluation and treatment with advanced diagnostic facilities.",
@@ -234,17 +234,17 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-[4/3] w-full max-w-sm">
+    <div className="relative mx-auto aspect-[3/4] w-full max-w-sm sm:aspect-[4/3]">
       <div className="absolute inset-0 grid place-items-center" aria-hidden>
-        <div className="h-[88%] w-[88%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+        <div className="h-[92%] w-[92%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
       </div>
-      <div className="absolute inset-x-6 bottom-2 top-6 grid place-items-center" aria-hidden>
+      <div className="absolute inset-2 grid place-items-center" aria-hidden>
         <div className="h-full w-full rounded-full border border-primary/15" />
       </div>
       <img
         src={doctorTransparent.url}
         alt="Dr Mantri Vijaya Bhaskar"
-        className="relative h-full w-full object-contain object-bottom"
+        className="relative h-full w-full object-contain object-center"
         loading="eager"
       />
     </div>
@@ -256,7 +256,7 @@ function Hero() {
     <section className="bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-6">
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
-        <div className="grid grid-cols-[1fr_44%] items-start gap-3 md:grid-cols-2 md:items-center md:gap-8">
+        <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
             <div className="flex items-center gap-2 text-primary">
               <LungMark className="h-5 w-5 md:h-6 md:w-6" />
@@ -341,18 +341,24 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-3 py-3 md:px-8 md:py-4">
-      <div className="rounded-[10px] border border-border bg-card p-3 shadow-sm md:p-6">
-        <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border">
+    <section className="mx-auto max-w-7xl px-3 py-2 md:px-8 md:py-4">
+      <div className="rounded-[10px] border border-border bg-card shadow-sm md:p-6">
+        {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
+        <ul className="flex gap-3 overflow-x-auto px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:p-0 md:divide-x md:divide-border">
           {TRUST.map((t) => (
             <li
               key={t.label}
-              className="flex items-center justify-start gap-2 md:justify-center md:gap-4 md:px-6"
+              className="flex shrink-0 items-center gap-2 md:shrink md:justify-center md:gap-4 md:px-6"
             >
-              <span className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15 md:h-14 md:w-14">
-                <img src={t.img} alt="" className="h-9 w-9 object-contain md:h-12 md:w-12" loading="lazy" />
+              <span className="grid h-8 w-8 shrink-0 place-items-center overflow-hidden rounded-full bg-secondary/60 ring-1 ring-primary/15 md:h-14 md:w-14">
+                <img
+                  src={t.img}
+                  alt=""
+                  className="h-7 w-7 object-contain md:h-12 md:w-12"
+                  loading="lazy"
+                />
               </span>
-              <span className="min-w-0 text-[11px] leading-tight text-foreground md:text-[15px]">
+              <span className="min-w-0 whitespace-nowrap text-[10px] leading-tight text-foreground md:whitespace-normal md:text-[15px]">
                 <span className="block font-medium">{t.label}</span>
                 <span className="block font-medium">{t.sub}</span>
               </span>
