@@ -442,28 +442,72 @@ function About() {
 
 function Footer() {
   const actions = [
-    { icon: MessageCircle, label: "WhatsApp", sub: "Message us", href: WHATSAPP_URL },
-    { icon: MapPin, label: "Directions", sub: "Find us on map", href: MAPS_URL },
-    { icon: Phone, label: "Call", sub: "+91 98765 43210", href: CALL_URL },
-    { icon: Mail, label: "Email", sub: "hello@mantriarohaclinic.in", href: EMAIL_URL },
-    { icon: Youtube, label: "YouTube", sub: "Health talks & more", href: YOUTUBE_URL },
+    {
+      icon: (props: { className?: string }) => (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={props.className} aria-hidden>
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5.01L2 22l5.07-1.33A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 14.13c-.19.55-.98 1.02-1.36 1.08-.38.07-.72.19-2.41-.5-2.04-.8-3.35-2.91-3.45-3.05-.1-.14-.83-1.1-.83-2.1 0-1 .52-1.49.7-1.69.19-.2.42-.25.56-.25.14 0 .28 0 .4.01.13.01.3-.05.47.36.17.41.55 1.42.6 1.52.05.1.08.22.02.35-.06.13-.1.22-.19.33-.1.11-.2.22-.29.3-.1.08-.2.17-.09.34.11.17.49.82 1.05 1.33.72.65 1.33.85 1.53.95.19.09.32.08.44-.05.12-.13.51-.59.65-.79.14-.21.28-.17.47-.1.19.08 1.22.58 1.43.68.21.1.35.15.4.23.06.09.04.52-.14 1.07z" />
+        </svg>
+      ),
+      color: "#25D366",
+      label: "WhatsApp",
+      sub: "Message us",
+      href: WHATSAPP_URL,
+    },
+    {
+      icon: (props: { className?: string }) => (
+        <svg viewBox="0 0 24 24" className={props.className} aria-hidden>
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4285F4" />
+          <path d="M12 2c3.87 0 7 3.13 7 7 0 5.25-7 13-7 13V2z" fill="#34A853" />
+          <path d="M12 2c-3.87 0-7 3.13-7 7 0 5.25 7 13 7 13V2z" fill="#FBBC05" />
+          <circle cx="12" cy="9" r="2.5" fill="#EA4335" />
+        </svg>
+      ),
+      color: "transparent",
+      label: "Directions",
+      sub: "Find us on map",
+      href: MAPS_URL,
+    },
+    {
+      icon: (props: { className?: string }) => <Phone className={props.className} />,
+      color: "#0F766E",
+      label: "Call",
+      sub: "+91 98765 43210",
+      href: CALL_URL,
+    },
+    {
+      icon: (props: { className?: string }) => <Mail className={props.className} />,
+      color: "#DC2626",
+      label: "Email",
+      sub: "hello@mantriarohaclinic.in",
+      href: EMAIL_URL,
+    },
+    {
+      icon: (props: { className?: string }) => <Youtube className={props.className} />,
+      color: "#FF0000",
+      label: "YouTube",
+      sub: "Health talks & more",
+      href: YOUTUBE_URL,
+    },
   ];
   return (
     <footer id="contact" className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-4 py-6 md:px-8 md:py-8">
-        <ul className="grid grid-cols-4 gap-3 md:grid-cols-5 md:gap-6">
+      <div className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-4">
+        <ul className="grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-0 md:divide-x md:divide-border">
           {actions.map((a) => (
             <li key={a.label}>
               <a
                 href={a.href}
-                className="flex flex-col items-center gap-2 rounded-[10px] p-2 text-center transition-colors hover:bg-secondary md:flex-row md:text-left"
+                className="flex items-center gap-3 rounded-[10px] p-2 text-left transition-colors hover:bg-secondary md:px-4"
               >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-primary">
+                <span
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
+                  style={a.color === "transparent" ? undefined : { backgroundColor: a.color, color: "#fff" }}
+                >
                   <a.icon className="h-6 w-6" />
                 </span>
                 <span className="min-w-0">
                   <span className="block text-sm font-semibold text-foreground">{a.label}</span>
-                  <span className="hidden truncate text-xs text-muted-foreground md:block">{a.sub}</span>
+                  <span className="block truncate text-xs text-muted-foreground">{a.sub}</span>
                 </span>
               </a>
             </li>
@@ -471,8 +515,8 @@ function Footer() {
         </ul>
       </div>
       <div className="bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-xs md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} Mantri Aroha Clinic. All rights reserved.</p>
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:px-8">
+          <p>© 2024 Mantri Aroha Clinic. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 opacity-90">
             <a href="#" className="hover:underline">Privacy Policy</a>
             <a href="#" className="hover:underline">Terms &amp; Conditions</a>
@@ -483,6 +527,7 @@ function Footer() {
     </footer>
   );
 }
+
 
 function HomePage() {
   return (
