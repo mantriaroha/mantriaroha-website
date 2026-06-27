@@ -130,15 +130,26 @@ function LungMark({ className = "h-10 w-10" }: { className?: string }) {
   );
 }
 
-function DoctorPortrait() {
+function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
+  const radius = shape === "circle" ? "rounded-full" : "rounded-[14px]";
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-4 border-background bg-secondary shadow-xl">
+    <div
+      className={`relative mx-auto aspect-square w-full max-w-md overflow-hidden border-4 border-background bg-secondary shadow-xl ${radius}`}
+    >
       <img
         src={doctorPhoto.url}
         alt="Dr Mantri Vijaya Bhaskar"
         className="h-full w-full object-cover object-top"
         loading="eager"
       />
+    </div>
+  );
+}
+
+function ServiceIllustration({ Icon }: { Icon: typeof Video }) {
+  return (
+    <div className="grid aspect-square w-full place-items-center rounded-[12px] bg-secondary text-primary">
+      <Icon className="h-16 w-16" strokeWidth={1.4} />
     </div>
   );
 }
