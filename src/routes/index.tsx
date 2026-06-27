@@ -232,72 +232,107 @@ function Header() {
   );
 }
 
+function HeroVisual() {
+  return (
+    <div className="relative mx-auto aspect-[4/3] w-full max-w-sm">
+      <div className="absolute inset-0 grid place-items-center" aria-hidden>
+        <div className="h-[88%] w-[88%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+      </div>
+      <div className="absolute inset-x-6 bottom-2 top-6 grid place-items-center" aria-hidden>
+        <div className="h-full w-full rounded-full border border-primary/15" />
+      </div>
+      <img
+        src={doctorTransparent.url}
+        alt="Dr Mantri Vijaya Bhaskar"
+        className="relative h-full w-full object-contain object-bottom"
+        loading="eager"
+      />
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-5 md:grid-cols-2 md:items-center md:gap-8 md:px-8 md:py-6">
-        <div className="order-2 md:order-1">
-          <div className="mb-3 flex items-center gap-2 text-primary">
-            <LungMark className="h-6 w-6" />
-            <span className="text-sm font-medium">A practice built on compassion</span>
-          </div>
-          <h1 className="font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            Helping you breathe
-            <br className="hidden sm:block" /> better every day
-          </h1>
-          <p className="mt-4 text-sm font-medium text-foreground/80">Evidence-based care for</p>
-          <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-sm text-foreground md:text-base">
-            {CONDITIONS.map((c, i) => (
-              <li key={c} className="flex items-center gap-2">
-                {i > 0 && <span className="text-primary">•</span>}
-                <span>{c}</span>
-              </li>
-            ))}
-          </ul>
+      <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-6">
+        {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
+        <div className="grid grid-cols-[1fr_44%] items-start gap-3 md:grid-cols-2 md:items-center md:gap-8">
+          <div className="md:order-1">
+            <div className="flex items-center gap-2 text-primary">
+              <LungMark className="h-5 w-5 md:h-6 md:w-6" />
+              <span className="text-xs font-medium md:text-sm">A practice built on compassion</span>
+            </div>
+            <h1 className="mt-3 font-serif text-[26px] font-semibold leading-[1.05] tracking-tight text-foreground md:mt-4 md:text-4xl lg:text-5xl">
+              Helping you breathe better every day
+            </h1>
+            <p className="mt-3 text-[13px] font-medium text-foreground/80 md:mt-4 md:text-sm">
+              Evidence-based care for
+            </p>
+            <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-[13px] text-foreground md:text-base">
+              {CONDITIONS.map((c, i) => (
+                <li key={c} className="flex items-center gap-2">
+                  {i > 0 && <span className="text-primary">•</span>}
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
 
-          <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-[10px] px-5">
-              <a href={BOOK_HREF}>
-                <Video className="mr-2 h-4 w-4" />
-                <span className="flex flex-col items-start leading-tight">
-                  <span className="text-sm font-semibold">Online Consultation</span>
-                  <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
-                </span>
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary"
-            >
-              <a href={BOOK_HREF}>
-                <Stethoscope className="mr-2 h-4 w-4" />
-                <span className="flex flex-col items-start leading-tight">
-                  <span className="text-sm font-semibold">Book Clinic Visit</span>
-                  <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
-                </span>
-              </a>
-            </Button>
+            <div className="mt-4 hidden flex-col gap-2 sm:flex sm:flex-row md:mt-5">
+              <Button asChild size="lg" className="h-12 rounded-[10px] px-5">
+                <a href={BOOK_HREF}>
+                  <Video className="mr-2 h-4 w-4" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <span className="text-sm font-semibold">Online Consultation</span>
+                    <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
+                  </span>
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary"
+              >
+                <a href={BOOK_HREF}>
+                  <Stethoscope className="mr-2 h-4 w-4" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <span className="text-sm font-semibold">Book Clinic Visit</span>
+                    <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
+                  </span>
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="md:order-2">
+            <HeroVisual />
           </div>
         </div>
 
-        <div className="order-1 md:order-2">
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-sm">
-            {/* Soft circular backdrop pattern */}
-            <div className="absolute inset-0 grid place-items-center" aria-hidden>
-              <div className="h-[88%] w-[88%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
-            </div>
-            <div className="absolute inset-x-6 bottom-2 top-6 grid place-items-center" aria-hidden>
-              <div className="h-full w-full rounded-full border border-primary/15" />
-            </div>
-            <img
-              src={doctorTransparent.url}
-              alt="Dr Mantri Vijaya Bhaskar"
-              className="relative h-full w-full object-contain object-bottom"
-              loading="eager"
-            />
-          </div>
+        {/* Mobile-only stacked CTAs below */}
+        <div className="mt-4 flex flex-col gap-2 sm:hidden">
+          <Button asChild className="h-12 rounded-[10px] px-4">
+            <a href={BOOK_HREF}>
+              <Video className="mr-2 h-4 w-4" />
+              <span className="flex flex-col items-start leading-tight">
+                <span className="text-sm font-semibold">Online Consultation</span>
+                <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
+              </span>
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            className="h-12 rounded-[10px] border-primary px-4 text-primary hover:bg-secondary"
+          >
+            <a href={BOOK_HREF}>
+              <Stethoscope className="mr-2 h-4 w-4" />
+              <span className="flex flex-col items-start leading-tight">
+                <span className="text-sm font-semibold">Book Clinic Visit</span>
+                <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
+              </span>
+            </a>
+          </Button>
         </div>
       </div>
     </section>
