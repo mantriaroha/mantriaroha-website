@@ -89,9 +89,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Mantri Aroha Clinic — Care with Compassion" },
       { name: "twitter:title", content: "Mantri Aroha Clinic — Care with Compassion" },
-      { name: "description", content: "A doctor's website to showcase services and establish an online presence." },
-      { property: "og:description", content: "A doctor's website to showcase services and establish an online presence." },
-      { name: "twitter:description", content: "A doctor's website to showcase services and establish an online presence." },
+      {
+        property: "og:description",
+        content:
+          "Expert respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Expert respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
+      },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/23beb6da-78d3-45c4-88ac-d9766731e1f8/id-preview-247cf61a--54e3e7b0-f870-43de-807e-0a46b66fe43b.lovable.app-1782446847051.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/23beb6da-78d3-45c4-88ac-d9766731e1f8/id-preview-247cf61a--54e3e7b0-f870-43de-807e-0a46b66fe43b.lovable.app-1782446847051.png" },
     ],
