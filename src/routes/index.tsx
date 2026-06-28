@@ -55,6 +55,18 @@ import libPollution from "@/assets/lib-pollution.webp.asset.json";
 import libHealthyLungs from "@/assets/lib-healthy_lungs.webp.asset.json";
 import libFamilyDoc from "@/assets/lib-family_doc.webp.asset.json";
 import libChestSpecialist from "@/assets/lib-chest_specialist.webp.asset.json";
+import detailCopd from "@/assets/detail-copd_1_LHL.webp.asset.json";
+import detailAsthma from "@/assets/detail-asthma_1_LHL.webp.asset.json";
+import detailCough from "@/assets/detail-cough_LHL.webp.asset.json";
+import detailAllergy from "@/assets/detail-allergy_LHL.webp.asset.json";
+import detailCopdAsthma from "@/assets/detail-copd_asthma_LHL.webp.asset.json";
+import detailPollution from "@/assets/detail-pollution_LHL.webp.asset.json";
+import detailPft from "@/assets/detail-pft_LHL.webp.asset.json";
+import detailLungs from "@/assets/detail-lungs_LHL.webp.asset.json";
+import detailFamily from "@/assets/detail-fam_health_LHL.webp.asset.json";
+import detailChest from "@/assets/detail-chest_LHL.webp.asset.json";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -157,18 +169,18 @@ const SERVICES = [
   },
 ];
 
-const LIBRARY = [
-  { img: libCopd.url, label: "COPD" },
-  { img: libAsthma.url, label: "Asthma" },
-  { img: libCough.url, label: "Cough" },
-  { img: libAllergy.url, label: "Allergy" },
-  { img: libCopdAsthma.url, label: "COPD & Asthma" },
+const LIBRARY: { img: string; label: string; details?: string[] }[] = [
+  { img: libCopd.url, label: "COPD", details: [detailCopd.url] },
+  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url] },
+  { img: libCough.url, label: "Cough", details: [detailCough.url] },
+  { img: libAllergy.url, label: "Allergy", details: [detailAllergy.url] },
+  { img: libCopdAsthma.url, label: "COPD & Asthma", details: [detailCopdAsthma.url] },
   { img: libSmoking.url, label: "Smoking" },
-  { img: libPollution.url, label: "Pollution" },
-  { img: libPft.url, label: "PFT" },
-  { img: libHealthyLungs.url, label: "Healthy Lungs" },
-  { img: libFamilyDoc.url, label: "Family Doctor" },
-  { img: libChestSpecialist.url, label: "Chest Specialist" },
+  { img: libPollution.url, label: "Pollution", details: [detailPollution.url] },
+  { img: libPft.url, label: "PFT", details: [detailPft.url] },
+  { img: libHealthyLungs.url, label: "Healthy Lungs", details: [detailLungs.url] },
+  { img: libFamilyDoc.url, label: "Family Doctor", details: [detailFamily.url] },
+  { img: libChestSpecialist.url, label: "Chest Specialist", details: [detailChest.url] },
 ];
 
 
@@ -471,6 +483,8 @@ function Services() {
 }
 
 function LibrarySection() {
+  const [openItem, setOpenItem] = useState<typeof LIBRARY[number] | null>(null);
+  const [idx, setIdx] = useState(0);
   return (
     <section id="library" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-3">
       <div className="mb-2 flex items-end justify-between gap-3 md:mb-3">
@@ -486,16 +500,51 @@ function LibrarySection() {
       </div>
       <div className="grid grid-cols-2 gap-2 md:flex md:gap-3 md:overflow-x-auto md:pb-2 md:[scrollbar-width:none] md:[&::-webkit-scrollbar]:hidden">
         {LIBRARY.map((l) => (
-          <a
+          <button
             key={l.label}
-            href="#library"
-            className="flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm"
+            type="button"
+            onClick={() => {
+              if (l.details && l.details.length > 0) {
+                setIdx(0);
+                setOpenItem(l);
+              }
+            }}
+            className="flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-left text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm"
           >
             <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
             <span className="md:text-center">{l.label}</span>
-          </a>
+          </button>
         ))}
       </div>
+      <Dialog open={!!openItem} onOpenChange={(o) => !o && setOpenItem(null)}>
+        <DialogContent className="max-w-4xl max-h-[92vh] overflow-y-auto p-2 sm:p-4">
+          <VisuallyHidden asChild>
+            <DialogTitle>{openItem?.label ?? "Lung Health"}</DialogTitle>
+          </VisuallyHidden>
+          {openItem?.details && (
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={openItem.details[idx]}
+                alt={openItem.label}
+                className="h-auto w-full rounded-md object-contain"
+              />
+              {openItem.details.length > 1 && (
+                <div className="flex items-center gap-2">
+                  {openItem.details.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setIdx(i)}
+                      className={`h-2 w-2 rounded-full ${i === idx ? "bg-primary" : "bg-muted-foreground/40"}`}
+                      aria-label={`Image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
