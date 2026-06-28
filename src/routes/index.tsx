@@ -400,9 +400,9 @@ function Services() {
           >
             <div className="h-24 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
-                src={s.image}
+                src={s.imageMobile || s.image}
                 alt={s.title}
-                className={`h-full w-full sm:hidden ${s.imageClass}`}
+                className={`h-full w-full sm:hidden ${s.imageMobileClass || s.imageClass}`}
                 loading="lazy"
               />
               <img
