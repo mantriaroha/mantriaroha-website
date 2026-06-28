@@ -65,6 +65,9 @@ import detailPft from "@/assets/detail-pft_LHL.webp.asset.json";
 import detailLungs from "@/assets/detail-lungs_LHL.webp.asset.json";
 import detailFamily from "@/assets/detail-fam_health_LHL.webp.asset.json";
 import detailChest from "@/assets/detail-chest_LHL.webp.asset.json";
+import detailAsthma2 from "@/assets/detail-asthma_2_LHL.webp.asset.json";
+import detailCopd2 from "@/assets/detail-copd_2_LHL.webp.asset.json";
+import detailSmoking from "@/assets/detail-smoking_LHL.webp.asset.json";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
@@ -170,12 +173,12 @@ const SERVICES = [
 ];
 
 const LIBRARY: { img: string; label: string; details?: string[] }[] = [
-  { img: libCopd.url, label: "COPD", details: [detailCopd.url] },
-  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url] },
+  { img: libCopd.url, label: "COPD", details: [detailCopd.url, detailCopd2.url] },
+  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url, detailAsthma2.url] },
   { img: libCough.url, label: "Cough", details: [detailCough.url] },
   { img: libAllergy.url, label: "Allergy", details: [detailAllergy.url] },
   { img: libCopdAsthma.url, label: "COPD & Asthma", details: [detailCopdAsthma.url] },
-  { img: libSmoking.url, label: "Smoking" },
+  { img: libSmoking.url, label: "Smoking", details: [detailSmoking.url] },
   { img: libPollution.url, label: "Pollution", details: [detailPollution.url] },
   { img: libPft.url, label: "PFT", details: [detailPft.url] },
   { img: libHealthyLungs.url, label: "Healthy Lungs", details: [detailLungs.url] },
