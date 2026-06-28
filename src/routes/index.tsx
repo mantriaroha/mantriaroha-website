@@ -27,6 +27,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
 import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
+import logoFull from "@/assets/logo-full.png.asset.json";
 import iconLungs from "@/assets/icon-lungs.png.asset.json";
 import iconFamily from "@/assets/icon-family.png.asset.json";
 import iconClipboard from "@/assets/icon-clipboard.png.asset.json";
@@ -191,13 +192,13 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2 md:flex md:gap-6 md:px-8 md:py-4">
         <a href="#" className="flex min-w-0 items-center gap-2 md:gap-3">
-          <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-2xl bg-secondary text-primary md:grid">
-            <LungMark className="h-6 w-6" />
-          </span>
+          <img
+            src={logoFull.url}
+            alt="Mantri Aroha Clinic"
+            className="h-9 w-auto shrink-0 md:h-11"
+            loading="eager"
+          />
           <span className="min-w-0">
-            <span className="block truncate font-serif text-lg font-semibold leading-tight text-primary md:text-2xl">
-              Mantri Aroha Clinic
-            </span>
             <span className="block truncate text-[11px] italic text-muted-foreground md:text-sm">
               Care with Compassion
             </span>
