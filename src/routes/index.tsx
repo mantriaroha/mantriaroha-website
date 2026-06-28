@@ -140,8 +140,10 @@ const SERVICES = [
   },
   {
     image: servicePft.url,
+    imageMobile: servicePftMobile.url,
     imageDesktop: servicePftDesktop.url,
     imageClass: "object-cover",
+    imageMobileClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "PFT",
     titleSub: "(Pulmonary Function Test / Spirometry)",
