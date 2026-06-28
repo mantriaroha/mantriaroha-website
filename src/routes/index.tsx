@@ -44,12 +44,16 @@ import serviceOnlineDesktop from "@/assets/service-online-desktop.png.asset.json
 import serviceClinicDesktop from "@/assets/service-clinic-desktop.png.asset.json";
 import servicePftDesktop from "@/assets/service-pft-desktop.png.asset.json";
 import servicePftMobile from "@/assets/service-pft-mobile.png.asset.json";
-import libAsthma from "@/assets/lib-asthma.png.asset.json";
-import libCopd from "@/assets/lib-copd.png.asset.json";
-import libCough from "@/assets/lib-cough.png.asset.json";
-import libAllergy from "@/assets/lib-allergy.png.asset.json";
-import libSmoking from "@/assets/lib-smoking.png.asset.json";
-import libPft from "@/assets/lib-pft.png.asset.json";
+import libAsthma from "@/assets/lib-asthma.webp.asset.json";
+import libCough from "@/assets/lib-cough.webp.asset.json";
+import libAllergy from "@/assets/lib-allergy.webp.asset.json";
+import libSmoking from "@/assets/lib-smoking.webp.asset.json";
+import libPft from "@/assets/lib-pft.webp.asset.json";
+import libCopdAsthma from "@/assets/lib-copd_asthma.webp.asset.json";
+import libPollution from "@/assets/lib-pollution.webp.asset.json";
+import libHealthyLungs from "@/assets/lib-healthy_lungs.webp.asset.json";
+import libFamilyDoc from "@/assets/lib-family_doc.webp.asset.json";
+import libChestSpecialist from "@/assets/lib-chest_specialist.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
