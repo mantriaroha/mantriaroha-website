@@ -238,7 +238,7 @@ function Header() {
             <img
               src={logoFull.url}
               alt="Mantri Aroha Clinic"
-              className="h-[72px] w-auto scale-[1.3] object-contain md:h-24"
+              className="h-[72px] w-auto scale-[1.15] object-contain md:h-24"
               loading="eager"
             />
           </div>
