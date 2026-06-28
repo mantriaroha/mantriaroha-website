@@ -157,17 +157,17 @@ const SERVICES = [
 ];
 
 const LIBRARY = [
-  { img: libCopd.url, label: "COPD" },
+  { img: libCopdAsthma.url, label: "COPD" },
   { img: libAsthma.url, label: "Asthma" },
   { img: libCough.url, label: "Cough" },
   { img: libAllergy.url, label: "Allergy" },
-  { img: libAsthma.url, label: "COPD & Asthma" },
+  { img: libCopdAsthma.url, label: "COPD & Asthma" },
   { img: libSmoking.url, label: "Smoking" },
-  { img: iconLungs.url, label: "Pollution" },
+  { img: libPollution.url, label: "Pollution" },
   { img: libPft.url, label: "PFT" },
-  { img: iconLungs.url, label: "Healthy Lungs" },
-  { img: iconFamily.url, label: "Family Doctor" },
-  { img: iconLungs.url, label: "Chest Specialist" },
+  { img: libHealthyLungs.url, label: "Healthy Lungs" },
+  { img: libFamilyDoc.url, label: "Family Doctor" },
+  { img: libChestSpecialist.url, label: "Chest Specialist" },
 ];
 
 
