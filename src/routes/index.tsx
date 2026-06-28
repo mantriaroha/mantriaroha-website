@@ -153,13 +153,19 @@ const SERVICES = [
 ];
 
 const LIBRARY = [
-  { img: libAsthma.url, label: "What is Asthma?" },
-  { img: libCopd.url, label: "What is COPD?" },
-  { img: libCough.url, label: "Chronic Cough" },
-  { img: libAllergy.url, label: "Allergy & Breathing Problems" },
-  { img: libSmoking.url, label: "Quit Smoking" },
-  { img: libPft.url, label: "Pulmonary Function Test" },
+  { img: libCopd.url, label: "COPD" },
+  { img: libAsthma.url, label: "Asthma" },
+  { img: libCough.url, label: "Cough" },
+  { img: libAllergy.url, label: "Allergy" },
+  { img: libAsthma.url, label: "COPD & Asthma" },
+  { img: libSmoking.url, label: "Smoking" },
+  { img: iconLungs.url, label: "Pollution" },
+  { img: libPft.url, label: "PFT" },
+  { img: iconLungs.url, label: "Healthy Lungs" },
+  { img: iconFamily.url, label: "Family Doctor" },
+  { img: iconLungs.url, label: "Chest Specialist" },
 ];
+
 
 const SYMPTOMS = [
   "Persistent cough",
