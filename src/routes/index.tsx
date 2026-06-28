@@ -182,9 +182,7 @@ function LungMark({ className = "h-10 w-10" }: { className?: string }) {
 function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   const radius = shape === "circle" ? "rounded-full" : "rounded-[14px]";
   return (
-    <div
-      className={`relative mx-auto aspect-square w-full max-w-md overflow-hidden border-4 border-background bg-secondary shadow-xl ${radius}`}
-    >
+    <div className={`relative mx-auto aspect-square w-full max-w-md overflow-hidden ${radius}`}>
       <img
         src={doctorPhoto.url}
         alt="Dr Mantri Vijaya Bhaskar"
