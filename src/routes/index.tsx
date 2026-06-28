@@ -190,7 +190,7 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
 function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2 md:flex md:gap-6 md:px-8 md:py-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-1 md:flex md:gap-6 md:px-8 md:py-4">
         <a href="#" className="flex min-w-0 items-center gap-2 md:gap-3">
           <img
             src={logoFull.url}
@@ -333,31 +333,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Mobile-only stacked CTAs below */}
-        <div className="mt-4 flex flex-col gap-2 sm:hidden">
-          <Button asChild className="h-12 rounded-[10px] px-4">
-            <a href={BOOK_HREF}>
-              <Video className="mr-2 h-4 w-4" />
-              <span className="flex flex-col items-start leading-tight">
-                <span className="text-sm font-semibold">Online Consultation</span>
-                <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
-              </span>
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="h-12 rounded-[10px] border-primary px-4 text-primary hover:bg-secondary"
-          >
-            <a href={BOOK_HREF}>
-              <Stethoscope className="mr-2 h-4 w-4" />
-              <span className="flex flex-col items-start leading-tight">
-                <span className="text-sm font-semibold">Book Clinic Visit</span>
-                <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
-              </span>
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
@@ -403,9 +378,9 @@ function Services() {
         {SERVICES.map((s) => (
           <Card
             key={s.title}
-            className="flex w-[70vw] min-w-[240px] shrink-0 flex-col gap-3 overflow-hidden rounded-[12px] border-border p-3 shadow-sm sm:w-auto sm:min-w-0 sm:p-4 lg:flex-row lg:gap-4"
+            className="flex w-[40vw] min-w-[150px] shrink-0 flex-col gap-2 overflow-hidden rounded-[12px] border-border p-2 shadow-sm sm:w-auto sm:min-w-0 sm:gap-3 sm:p-4 lg:flex-row lg:gap-4"
           >
-            <div className="h-32 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
+            <div className="h-24 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
                 src={s.image}
                 alt={s.title}
@@ -415,18 +390,18 @@ function Services() {
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-between items-center text-center lg:items-start lg:text-left">
               <div>
-                <h3 className="font-serif text-base font-semibold leading-tight text-primary sm:text-lg">
+                <h3 className="font-serif text-sm font-semibold leading-tight text-primary sm:text-lg">
                   {s.title}
                 </h3>
                 {s.titleSub && (
-                  <p className="mt-0.5 text-[11px] leading-snug text-primary/80">{s.titleSub}</p>
+                  <p className="mt-0.5 text-[10px] leading-snug text-primary/80 sm:text-[11px]">{s.titleSub}</p>
                 )}
-                <p className="mt-1 text-[12px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
-                <p className="mt-2 text-[12px] leading-snug text-muted-foreground sm:text-[13px]">{s.desc}</p>
+                <p className="mt-1 text-[11px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
+                <p className="mt-2 text-[11px] leading-snug text-muted-foreground sm:text-[13px]">{s.desc}</p>
               </div>
               <Button
                 asChild
-                className="mt-3 h-9 rounded-[10px] px-5 text-[11px] font-semibold tracking-[0.14em] lg:mt-2 lg:self-start"
+                className="mt-2 h-8 rounded-[10px] px-3 text-[10px] font-semibold tracking-[0.14em] sm:mt-3 sm:h-9 sm:px-5 sm:text-[11px] lg:mt-2 lg:self-start"
               >
                 <a href={BOOK_HREF}>BOOK NOW</a>
               </Button>
@@ -434,26 +409,26 @@ function Services() {
           </Card>
         ))}
 
-        <Card className="relative w-[70vw] min-w-[240px] shrink-0 flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-4 shadow-sm sm:w-auto sm:min-w-0 sm:p-6">
-          <h3 className="font-serif text-xl font-semibold text-primary">Are you experiencing?</h3>
-          <ul className="mt-4 space-y-3">
+        <Card className="relative w-[40vw] min-w-[150px] shrink-0 flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-3 shadow-sm sm:w-auto sm:min-w-0 sm:p-6">
+          <h3 className="font-serif text-base font-semibold text-primary sm:text-xl">Are you experiencing?</h3>
+          <ul className="mt-2 space-y-2 sm:mt-4 sm:space-y-3">
             {SYMPTOMS.map((s) => (
-              <li key={s} className="flex items-center gap-3">
+              <li key={s} className="flex items-center gap-2 sm:gap-3">
                 <Checkbox
                   id={`sx-${s}`}
                   checked={!!checked[s]}
                   onCheckedChange={(v) => setChecked((p) => ({ ...p, [s]: !!v }))}
                   className="border-primary/40 data-[state=checked]:bg-primary"
                 />
-                <label htmlFor={`sx-${s}`} className="text-sm text-foreground">
+                <label htmlFor={`sx-${s}`} className="text-xs text-foreground sm:text-sm">
                   {s}
                 </label>
               </li>
             ))}
           </ul>
-          <Button asChild className="mt-auto h-11 w-full rounded-[10px]">
+          <Button asChild className="mt-auto h-9 w-full rounded-[10px] text-xs sm:h-11 sm:text-sm">
             <a href={BOOK_HREF}>
-              <CalendarCheck className="mr-2 h-5 w-5" />
+              <CalendarCheck className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Book a consultation
             </a>
           </Button>
