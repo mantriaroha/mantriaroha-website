@@ -59,6 +59,26 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          name: "Mantri Aroha Clinic",
+          description:
+            "Respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, chronic cough, allergy and preventive lung health.",
+          url: "https://m-a-c.lovable.app/",
+          telephone: "+91 98765 43210",
+          email: "hello@mantriarohaclinic.in",
+          medicalSpecialty: ["Pulmonary", "FamilyPractice"],
+          physician: {
+            "@type": "Physician",
+            name: "Dr Mantri Vijaya Bhaskar",
+          },
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
