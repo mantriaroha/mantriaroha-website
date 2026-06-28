@@ -173,12 +173,12 @@ const SERVICES = [
 ];
 
 const LIBRARY: { img: string; label: string; details?: string[] }[] = [
-  { img: libCopd.url, label: "COPD", details: [detailCopd.url] },
-  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url] },
+  { img: libCopd.url, label: "COPD", details: [detailCopd.url, detailCopd2.url] },
+  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url, detailAsthma2.url] },
   { img: libCough.url, label: "Cough", details: [detailCough.url] },
   { img: libAllergy.url, label: "Allergy", details: [detailAllergy.url] },
   { img: libCopdAsthma.url, label: "COPD & Asthma", details: [detailCopdAsthma.url] },
-  { img: libSmoking.url, label: "Smoking" },
+  { img: libSmoking.url, label: "Smoking", details: [detailSmoking.url] },
   { img: libPollution.url, label: "Pollution", details: [detailPollution.url] },
   { img: libPft.url, label: "PFT", details: [detailPft.url] },
   { img: libHealthyLungs.url, label: "Healthy Lungs", details: [detailLungs.url] },
