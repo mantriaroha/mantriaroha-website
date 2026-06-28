@@ -65,6 +65,9 @@ import detailPft from "@/assets/detail-pft_LHL.webp.asset.json";
 import detailLungs from "@/assets/detail-lungs_LHL.webp.asset.json";
 import detailFamily from "@/assets/detail-fam_health_LHL.webp.asset.json";
 import detailChest from "@/assets/detail-chest_LHL.webp.asset.json";
+import detailAsthma2 from "@/assets/detail-asthma_2_LHL.webp.asset.json";
+import detailCopd2 from "@/assets/detail-copd_2_LHL.webp.asset.json";
+import detailSmoking from "@/assets/detail-smoking_LHL.webp.asset.json";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
