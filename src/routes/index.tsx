@@ -169,18 +169,18 @@ const SERVICES = [
   },
 ];
 
-const LIBRARY = [
-  { img: libCopd.url, label: "COPD" },
-  { img: libAsthma.url, label: "Asthma" },
-  { img: libCough.url, label: "Cough" },
-  { img: libAllergy.url, label: "Allergy" },
-  { img: libCopdAsthma.url, label: "COPD & Asthma" },
+const LIBRARY: { img: string; label: string; details?: string[] }[] = [
+  { img: libCopd.url, label: "COPD", details: [detailCopd.url] },
+  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url] },
+  { img: libCough.url, label: "Cough", details: [detailCough.url] },
+  { img: libAllergy.url, label: "Allergy", details: [detailAllergy.url] },
+  { img: libCopdAsthma.url, label: "COPD & Asthma", details: [detailCopdAsthma.url] },
   { img: libSmoking.url, label: "Smoking" },
-  { img: libPollution.url, label: "Pollution" },
-  { img: libPft.url, label: "PFT" },
-  { img: libHealthyLungs.url, label: "Healthy Lungs" },
-  { img: libFamilyDoc.url, label: "Family Doctor" },
-  { img: libChestSpecialist.url, label: "Chest Specialist" },
+  { img: libPollution.url, label: "Pollution", details: [detailPollution.url] },
+  { img: libPft.url, label: "PFT", details: [detailPft.url] },
+  { img: libHealthyLungs.url, label: "Healthy Lungs", details: [detailLungs.url] },
+  { img: libFamilyDoc.url, label: "Family Doctor", details: [detailFamily.url] },
+  { img: libChestSpecialist.url, label: "Chest Specialist", details: [detailChest.url] },
 ];
 
 
