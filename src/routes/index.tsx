@@ -426,9 +426,9 @@ function Services() {
           </Card>
         ))}
 
-        <Card className="relative w-[40vw] min-w-[150px] shrink-0 flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-3 shadow-sm sm:w-auto sm:min-w-0 sm:p-6">
-          <h3 className="font-serif text-base font-semibold text-primary sm:text-xl">Are you experiencing?</h3>
-          <ul className="mt-2 space-y-2 sm:mt-4 sm:space-y-3">
+        <Card className="relative w-[40vw] min-w-[150px] shrink-0 flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-3 shadow-sm sm:w-auto sm:min-w-0 sm:p-4">
+          <h3 className="font-serif text-sm font-semibold text-primary sm:text-base">Are you experiencing?</h3>
+          <ul className="mt-2 space-y-2 sm:mt-3 sm:space-y-2">
             {SYMPTOMS.map((s) => (
               <li key={s} className="flex items-center gap-2 sm:gap-3">
                 <Checkbox
@@ -437,15 +437,15 @@ function Services() {
                   onCheckedChange={(v) => setChecked((p) => ({ ...p, [s]: !!v }))}
                   className="border-primary/40 data-[state=checked]:bg-primary"
                 />
-                <label htmlFor={`sx-${s}`} className="text-xs text-foreground sm:text-sm">
+                <label htmlFor={`sx-${s}`} className="text-[11px] text-foreground sm:text-xs">
                   {s}
                 </label>
               </li>
             ))}
           </ul>
-          <Button asChild className="mt-auto h-9 w-full rounded-[10px] text-xs sm:h-11 sm:text-sm">
+          <Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
             <a href={BOOK_HREF}>
-              <CalendarCheck className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+              <CalendarCheck className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Book a consultation
             </a>
           </Button>
