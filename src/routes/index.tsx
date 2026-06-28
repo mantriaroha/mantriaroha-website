@@ -43,7 +43,6 @@ import servicePft from "@/assets/service-pft.png.asset.json";
 import serviceOnlineDesktop from "@/assets/service-online-desktop.png.asset.json";
 import serviceClinicDesktop from "@/assets/service-clinic-desktop.png.asset.json";
 import servicePftDesktop from "@/assets/service-pft-desktop.png.asset.json";
-import servicePftMobile from "@/assets/service-pft-mobile.png.asset.json";
 import libAsthma from "@/assets/lib-asthma.png.asset.json";
 import libCopd from "@/assets/lib-copd.png.asset.json";
 import libCough from "@/assets/lib-cough.png.asset.json";
@@ -140,10 +139,8 @@ const SERVICES = [
   },
   {
     image: servicePft.url,
-    imageMobile: servicePftMobile.url,
     imageDesktop: servicePftDesktop.url,
     imageClass: "object-cover",
-    imageMobileClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "PFT",
     titleSub: "(Pulmonary Function Test / Spirometry)",
@@ -211,7 +208,7 @@ function Header() {
           <img
             src={logoFull.url}
             alt="Mantri Aroha Clinic"
-            className="h-[50px] w-auto shrink-0 md:h-24"
+            className="h-[72px] w-auto shrink-0 md:h-24"
             loading="eager"
           />
           <span className="min-w-0">
@@ -240,12 +237,12 @@ function Header() {
         </nav>
 
         <div className="flex items-center gap-1 md:gap-2">
-          <Button asChild className="h-8 rounded-[10px] px-3 text-xs md:h-10 md:px-5 md:text-sm">
+          <Button asChild className="h-9 rounded-[10px] px-3 text-xs md:h-10 md:px-5 md:text-sm">
             <a href={BOOK_HREF}>Book a visit</a>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-8 w-8 lg:hidden" aria-label="Open menu">
+              <Button variant="ghost" size="icon" className="h-9 w-9 lg:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -274,12 +271,11 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-[2/3] w-full max-w-sm sm:aspect-[4/3]">
-      {/* Background halo + ring — desktop only */}
-      <div className="absolute inset-0 hidden place-items-center sm:grid" aria-hidden>
+    <div className="relative mx-auto aspect-[3/4] w-full max-w-sm sm:aspect-[4/3]">
+      <div className="absolute inset-0 grid place-items-center" aria-hidden>
         <div className="h-[92%] w-[92%] rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
       </div>
-      <div className="absolute inset-2 hidden place-items-center sm:grid" aria-hidden>
+      <div className="absolute inset-2 grid place-items-center" aria-hidden>
         <div className="h-full w-full rounded-full border border-primary/15" />
       </div>
       <img
@@ -401,9 +397,9 @@ function Services() {
           >
             <div className="h-24 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
-                src={s.imageMobile || s.image}
+                src={s.image}
                 alt={s.title}
-                className={`h-full w-full sm:hidden ${s.imageMobileClass || s.imageClass}`}
+                className={`h-full w-full sm:hidden ${s.imageClass}`}
                 loading="lazy"
               />
               <img
