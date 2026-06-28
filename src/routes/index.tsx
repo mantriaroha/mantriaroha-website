@@ -469,7 +469,7 @@ function LibrarySection() {
   return (
     <section id="library" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-3">
       <div className="mb-2 flex items-end justify-between gap-3 md:mb-3">
-        <h2 className="font-serif text-[26px] font-semibold leading-tight text-primary md:text-3xl">
+        <h2 className="font-serif text-[18px] font-semibold leading-tight text-primary md:text-3xl">
           Lung Health Library
         </h2>
         <a
@@ -484,10 +484,10 @@ function LibrarySection() {
           <a
             key={l.label}
             href="#library"
-            className="flex items-center gap-3 rounded-[12px] border border-border bg-card p-2 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:shrink-0 md:gap-2 md:p-2 md:text-sm md:w-40"
+            className="flex items-center justify-center gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm"
           >
-            <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-10 md:w-10" loading="lazy" />
-            <span>{l.label}</span>
+            <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
+            <span className="text-center">{l.label}</span>
           </a>
         ))}
       </div>
