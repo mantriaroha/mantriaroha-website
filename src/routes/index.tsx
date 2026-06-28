@@ -234,14 +234,12 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-0 md:flex md:gap-6 md:px-8 md:py-2">
         <a href="#" className="flex min-w-0 items-center gap-1 md:gap-2">
-          <div className="h-[72px] w-auto overflow-hidden md:h-24">
-            <img
-              src={logoFull.url}
-              alt="Mantri Aroha Clinic"
-              className="h-[72px] w-auto origin-left scale-[1.05] object-contain md:h-24"
-              loading="eager"
-            />
-          </div>
+          <img
+            src={logoFull.url}
+            alt="Mantri Aroha Clinic"
+            className="h-[72px] w-auto shrink-0"
+            loading="eager"
+          />
           <span className="min-w-0">
             <span className="block truncate text-sm font-semibold text-foreground md:text-base">
               Mantri Aroha Clinic
