@@ -295,7 +295,7 @@ function HeroVisual() {
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-[50px]">
+      <div className="mx-auto max-w-7xl px-4 py-5 md:px-8 md:py-10">
 
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
@@ -358,7 +358,7 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-[50px]">
+    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-2.5">
       <div className="rounded-[10px] border border-border bg-card p-2 shadow-sm md:p-3">
         {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
         <ul className="flex gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:divide-x md:divide-border">
@@ -389,7 +389,7 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-[50px]">
+    <section id="services" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
 <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s, i) => (
@@ -461,7 +461,7 @@ function Services() {
 
 function LibrarySection() {
   return (
-    <section id="library" className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-[50px]">
+    <section id="library" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
       <div className="mb-3 flex items-end justify-between gap-4 md:mb-4">
 
         <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
@@ -492,7 +492,7 @@ function LibrarySection() {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-[50px]">
+    <section id="about" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-4">
       <Card className="grid gap-3 rounded-[12px] border-border p-3 shadow-sm md:grid-cols-[200px_1fr_300px] md:items-center md:gap-4 md:p-4">
 
         <div className="mx-auto w-40 md:w-full">
@@ -580,7 +580,7 @@ function Footer() {
       id="contact"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card shadow-[0_-4px_12px_rgba(0,0,0,0.06)] md:static md:shadow-none"
     >
-      <div className="mx-auto max-w-7xl px-2 py-1.5 md:px-8 md:py-[50px]">
+      <div className="mx-auto max-w-7xl px-2 py-1.5 md:px-8 md:py-3">
         <ul className="grid grid-cols-5 gap-1 md:grid-cols-6 md:gap-0 md:divide-x md:divide-border">
           {actions.map((a) => (
             <li key={a.label} className={a.mobile ? "" : "hidden md:list-item"}>
