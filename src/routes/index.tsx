@@ -190,7 +190,7 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
 function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2 md:flex md:gap-6 md:px-8 md:py-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-1 md:flex md:gap-6 md:px-8 md:py-4">
         <a href="#" className="flex min-w-0 items-center gap-2 md:gap-3">
           <img
             src={logoFull.url}
@@ -333,31 +333,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Mobile-only stacked CTAs below */}
-        <div className="mt-4 flex flex-col gap-2 sm:hidden">
-          <Button asChild className="h-12 rounded-[10px] px-4">
-            <a href={BOOK_HREF}>
-              <Video className="mr-2 h-4 w-4" />
-              <span className="flex flex-col items-start leading-tight">
-                <span className="text-sm font-semibold">Online Consultation</span>
-                <span className="text-[11px] opacity-90">ఆన్‌లైన్ సంప్రదింపులు</span>
-              </span>
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="h-12 rounded-[10px] border-primary px-4 text-primary hover:bg-secondary"
-          >
-            <a href={BOOK_HREF}>
-              <Stethoscope className="mr-2 h-4 w-4" />
-              <span className="flex flex-col items-start leading-tight">
-                <span className="text-sm font-semibold">Book Clinic Visit</span>
-                <span className="text-[11px] opacity-90">క్లినిక్‌లో సంప్రదింపులు</span>
-              </span>
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
