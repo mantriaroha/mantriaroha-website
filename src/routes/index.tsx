@@ -182,9 +182,7 @@ function LungMark({ className = "h-10 w-10" }: { className?: string }) {
 function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   const radius = shape === "circle" ? "rounded-full" : "rounded-[14px]";
   return (
-    <div
-      className={`relative mx-auto aspect-square w-full max-w-md overflow-hidden border-4 border-background bg-secondary shadow-xl ${radius}`}
-    >
+    <div className={`relative mx-auto aspect-square w-full max-w-md overflow-hidden ${radius}`}>
       <img
         src={doctorPhoto.url}
         alt="Dr Mantri Vijaya Bhaskar"
@@ -487,28 +485,28 @@ function LibrarySection() {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6 md:pb-10">
-      <Card className="grid gap-5 rounded-[12px] border-border p-5 shadow-sm md:grid-cols-[240px_1fr_320px] md:items-center md:gap-6 md:p-8">
+    <section id="about" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-4">
+      <Card className="grid gap-3 rounded-[12px] border-border p-3 shadow-sm md:grid-cols-[200px_1fr_300px] md:items-center md:gap-4 md:p-4">
 
-        <div className="mx-auto w-44 md:w-full">
+        <div className="mx-auto w-40 md:w-full">
           <DoctorPortrait shape="square" />
         </div>
         <div>
           <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
             About Dr Mantri Vijaya Bhaskar
           </h2>
-          <p className="mt-3 text-foreground/80">
+          <p className="mt-2 text-foreground/80">
             Helping patients understand and manage respiratory illnesses through evidence-based
             care, clear communication, and compassionate listening.
           </p>
-          <p className="mt-4 text-sm font-medium text-foreground">
+          <p className="mt-3 text-sm font-medium text-foreground">
             MBBS, DTCD, Chest Physician &amp; Family Physician
           </p>
           <p className="text-sm text-muted-foreground">
             12+ years of experience in Respiratory &amp; Family Medicine
           </p>
         </div>
-        <blockquote className="rounded-[10px] border border-border bg-secondary/60 p-5">
+        <blockquote className="rounded-[10px] border border-border bg-secondary/60 p-4">
           <div className="flex items-center gap-2 text-primary">
             <Quote className="h-5 w-5" />
             <span className="font-serif text-lg font-semibold">Doctor&rsquo;s Promise</span>
