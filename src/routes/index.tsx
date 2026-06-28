@@ -27,6 +27,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
 import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
+import logoFull from "@/assets/logo-full.png.asset.json";
 import iconLungs from "@/assets/icon-lungs.png.asset.json";
 import iconFamily from "@/assets/icon-family.png.asset.json";
 import iconClipboard from "@/assets/icon-clipboard.png.asset.json";
