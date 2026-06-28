@@ -358,8 +358,8 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-5">
-      <div className="rounded-[10px] border border-border bg-card p-2 shadow-sm md:p-6">
+    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-2.5">
+      <div className="rounded-[10px] border border-border bg-card p-2 shadow-sm md:p-3">
         {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
         <ul className="flex gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:divide-x md:divide-border">
 
