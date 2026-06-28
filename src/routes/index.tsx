@@ -49,6 +49,7 @@ import libCough from "@/assets/lib-cough.webp.asset.json";
 import libAllergy from "@/assets/lib-allergy.webp.asset.json";
 import libSmoking from "@/assets/lib-smoking.webp.asset.json";
 import libPft from "@/assets/lib-pft.webp.asset.json";
+import libCopd from "@/assets/lib-copd.webp.asset.json";
 import libCopdAsthma from "@/assets/lib-copd_asthma.webp.asset.json";
 import libPollution from "@/assets/lib-pollution.webp.asset.json";
 import libHealthyLungs from "@/assets/lib-healthy_lungs.webp.asset.json";
@@ -157,7 +158,7 @@ const SERVICES = [
 ];
 
 const LIBRARY = [
-  { img: libCopdAsthma.url, label: "COPD" },
+  { img: libCopd.url, label: "COPD" },
   { img: libAsthma.url, label: "Asthma" },
   { img: libCough.url, label: "Cough" },
   { img: libAllergy.url, label: "Allergy" },
