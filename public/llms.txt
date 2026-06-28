@@ -1,0 +1,9 @@
+# Mantri Aroha Clinic
+
+> Respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, chronic cough, allergy and preventive lung health.
+
+Mantri Aroha Clinic offers evidence-based respiratory and family medicine. Services include online consultations, in-clinic visits, and pulmonary function testing. The Lung Health Library provides patient education on common respiratory conditions.
+
+## Pages
+
+- [Home](/): Overview of services, doctor profile, and contact details.
