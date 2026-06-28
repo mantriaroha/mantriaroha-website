@@ -99,8 +99,8 @@ export const Route = createFileRoute("/")({
           description:
             "Respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, chronic cough, allergy and preventive lung health.",
           url: "https://m-a-c.lovable.app/",
-          telephone: "+91 98765 43210",
-          email: "hello@mantriarohaclinic.in",
+          telephone: "+91 90325 25189",
+          email: "mantriaroha@gmail.com",
           medicalSpecialty: ["Pulmonary", "FamilyPractice"],
           physician: {
             "@type": "Physician",
@@ -113,12 +113,12 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const WHATSAPP_URL = "https://wa.me/919876543210";
-const CALL_URL = "tel:+919876543210";
-const EMAIL_URL = "mailto:hello@mantriarohaclinic.in";
+const WHATSAPP_URL = "https://wa.me/919032525189";
+const CALL_URL = "tel:+919032525189";
+const EMAIL_URL = "mailto:mantriaroha@gmail.com";
 const MAPS_URL = "https://maps.google.com/?q=Mantri+Aroha+Clinic";
-const YOUTUBE_URL = "#";
-const TELEGRAM_URL = "https://t.me/mantriarohaclinic";
+const YOUTUBE_URL = "https://www.youtube.com/@mantriaroha";
+const TELEGRAM_URL = "https://t.me/+919032525189";
 const BOOK_HREF = "#book";
 
 const NAV = [
@@ -605,7 +605,7 @@ function Footer() {
     {
       img: contactCall.url,
       label: "Call",
-      sub: "+91 98765 43210",
+      sub: "+91 90325 25189",
       href: CALL_URL,
       mobile: true,
     },
@@ -626,7 +626,7 @@ function Footer() {
     {
       img: contactGmail.url,
       label: "Email",
-      sub: "hello@mantriarohaclinic.in",
+      sub: "mantriaroha@gmail.com",
       href: EMAIL_URL,
       mobile: false,
     },
@@ -673,7 +673,7 @@ function Footer() {
       </div>
       <div className="hidden bg-primary text-primary-foreground md:block">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© 2024 Mantri Aroha Clinic. All rights reserved.</p>
+          <p>© 2026 Mantri Aroha Clinic. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 opacity-90">
             <a href="#" className="hover:underline">
               Privacy Policy
