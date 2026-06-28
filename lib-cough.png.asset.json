@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "95abee4f-e7fc-4cd0-8522-68c00888ff75",
-  "project_id": "6441ded5-62f7-46bf-8dcc-4fb7f339f417",
-  "url": "/__l5e/assets-v1/95abee4f-e7fc-4cd0-8522-68c00888ff75/lib-cough.png",
-  "r2_key": "a/v1/6441ded5-62f7-46bf-8dcc-4fb7f339f417/95abee4f-e7fc-4cd0-8522-68c00888ff75/lib-cough.png",
-  "original_filename": "lib-cough.png",
-  "size": 1222177,
   "content_type": "image/png",
-  "created_at": "2026-06-27T08:14:08Z"
+  "created_at": "2026-06-27T08:14:08Z",
+  "original_filename": "lib-cough.png",
+  "project_id": "5429fbaf-9805-4282-847d-2a78b8ebc6e5",
+  "r2_key": "a/v1/5429fbaf-9805-4282-847d-2a78b8ebc6e5/95abee4f-e7fc-4cd0-8522-68c00888ff75/lib-cough.png",
+  "size": 1222177,
+  "url": "/__l5e/assets-v1/95abee4f-e7fc-4cd0-8522-68c00888ff75/lib-cough.png",
+  "version": 1
 }
