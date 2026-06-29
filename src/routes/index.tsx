@@ -173,9 +173,10 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const WHATSAPP_URL = "https://wa.me/919032525189";
+const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=919032525189";
 const CALL_URL = "tel:+919032525189";
 const EMAIL_URL = "mailto:mantriaroha@gmail.com";
+const MAPS_URL = "https://maps.app.goo.gl/AmpGVLWHgNALawMS8?g_st=aw";
 
 const YOUTUBE_URL = "https://www.youtube.com/@mantriaroha";
 const TELEGRAM_URL = "https://t.me/+919032525189";
@@ -589,6 +590,20 @@ function About() {
 }
 
 function Footer() {
+  const handleContactClick = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!href.startsWith("http")) return;
+
+    try {
+      if (window.self !== window.top) {
+        event.preventDefault();
+        window.open(href, "_top");
+      }
+    } catch {
+      event.preventDefault();
+      window.location.href = href;
+    }
+  };
+
   const actions = [
     {
       img: contactWhatsapp.url,
@@ -608,7 +623,7 @@ function Footer() {
       img: contactMaps.url,
       label: "Directions",
       sub: "Find us on map",
-      href: "https://www.google.com/maps/place/OPD+ground+floor,+Mantri+Aroha,+Vasundhara+Hospital,+12-6-36%2F4%2FC,+opp.+KP+Bus+Depot,+Srihari+Nagar,+Pragathi+Nagar,+Moosapet,+Hyderabad,+Telangana+500018/data=!4m2!3m1!1s0x3bcb91359dec03d9:0xf1e2c89241b16d5!18m1!1e1",
+      href: MAPS_URL,
       mobile: true,
     },
     {
@@ -646,6 +661,7 @@ function Footer() {
                 href={a.href}
                 target={a.href.startsWith("http") ? "_blank" : "_self"}
                 rel={a.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                onClick={handleContactClick(a.href)}
                 className="flex flex-col items-center gap-1 rounded-[10px] p-1 text-center transition-colors hover:bg-secondary md:flex-row md:gap-3 md:p-2 md:px-4 md:text-left"
               >
                 <span className="grid h-7 w-7 shrink-0 place-items-center md:h-10 md:w-10">
