@@ -4,34 +4,75 @@ import detailChest from "@/assets/detail-chest_LHL.webp.asset.json";
 import logoFull from "@/assets/logo-full.png.asset.json";
 
 export const Route = createFileRoute("/library/chest-specialist")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "What a Chest Specialist (Pulmonologist) Does — Mantri Aroha Clinic",
-      },
-      {
-        name: "description",
-        content:
-          "When to consult a chest physician, the conditions a pulmonologist manages (asthma, COPD, allergy, sleep apnea), services offered including PFT/Spirometry, and the benefits of specialist lung care.",
-      },
-      {
-        property: "og:title",
-        content:
-          "What a Chest Specialist (Pulmonologist) Does — Mantri Aroha Clinic",
-      },
-      {
-        property: "og:description",
-        content:
-          "A plain-language guide to chest specialist care: symptoms, conditions, services, and benefits.",
-      },
-      { property: "og:image", content: detailChest.url },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: detailChest.url },
-    ],
-  }),
+  head: () => {
+    const url =
+      "https://care-site-create.lovable.app/library/chest-specialist";
+    const title =
+      "Chest Specialist (Pulmonologist) in Hyderabad — When to Consult | Mantri Aroha Clinic";
+    const description =
+      "When to see a chest physician: chronic cough, breathlessness, wheezing, asthma, COPD, allergy and sleep apnea. Spirometry / PFT, asthma & COPD plans, smoking cessation and online consultations at Mantri Aroha Clinic.";
+    const image = detailChest.url;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        {
+          name: "keywords",
+          content:
+            "chest specialist, pulmonologist, chest physician, asthma doctor, COPD specialist, chronic cough, breathlessness, spirometry, PFT, lung function test, smoking cessation, sleep apnea, allergy, Mantri Aroha Clinic",
+        },
+        { property: "og:type", content: "article" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: url },
+        { property: "og:image", content: image },
+        { property: "og:image:alt", content: "Chest specialist care at Mantri Aroha Clinic" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            name: title,
+            description,
+            url,
+            inLanguage: "en",
+            image,
+            about: [
+              { "@type": "MedicalCondition", name: "Asthma" },
+              { "@type": "MedicalCondition", name: "Chronic Obstructive Pulmonary Disease" },
+              { "@type": "MedicalCondition", name: "Chronic Cough" },
+              { "@type": "MedicalCondition", name: "Allergy" },
+              { "@type": "MedicalCondition", name: "Sleep Apnea" },
+            ],
+            mainEntity: {
+              "@type": "MedicalBusiness",
+              name: "Mantri Aroha Clinic",
+              url: "https://care-site-create.lovable.app/",
+              medicalSpecialty: "Pulmonary",
+            },
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://care-site-create.lovable.app/" },
+                { "@type": "ListItem", position: 2, name: "Lung Health Library", item: "https://care-site-create.lovable.app/#library" },
+                { "@type": "ListItem", position: 3, name: "Chest Specialist", item: url },
+              ],
+            },
+          }),
+        },
+      ],
+    };
+  },
   component: ChestSpecialistArticle,
 });
+
 
 function ChestSpecialistArticle() {
   return (
