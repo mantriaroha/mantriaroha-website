@@ -682,15 +682,15 @@ function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:px-8">
           <p>© 2026 Mantri Aroha Clinic. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 opacity-90">
-            <a href="#" className="hover:underline">
+            <Link to="/privacy" className="hover:underline">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:underline">
+            </Link>
+            <Link to="/terms" className="hover:underline">
               Terms &amp; Conditions
-            </a>
-            <a href="#" className="hover:underline">
-              Disclaimer
-            </a>
+            </Link>
+            <Link to="/disclaimer" className="hover:underline">
+              Medical Disclaimer
+            </Link>
           </div>
         </div>
       </div>
