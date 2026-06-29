@@ -64,6 +64,7 @@
 @theme inline {
   --font-sans: "Inter", "Noto Sans Telugu", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Fraunces", "Noto Sans Telugu", ui-serif, Georgia, serif;
+  --font-script: "Dancing Script", cursive, ui-serif, Georgia, serif;
 }
 
 :root {
