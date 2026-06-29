@@ -443,7 +443,7 @@ function HeroVisual() {
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto max-w-7xl px-4 py-1.5 md:px-8 md:py-10">
+      <div className="mx-auto max-w-7xl px-4 py-0 md:px-8 md:py-10">
 
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
@@ -537,13 +537,13 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 pt-1.5 pb-3 md:px-8 md:py-6">
+    <section id="services" className="mx-auto max-w-7xl px-4 py-1.5 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
-<div className="flex gap-1 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
+<div className="grid grid-cols-2 gap-2 pb-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s, i) => (
           <Card
             key={s.title}
-            className={`flex w-[40vw] min-w-[150px] shrink-0 flex-col gap-1 overflow-hidden rounded-[12px] border-border p-1.5 shadow-sm sm:w-auto sm:min-w-0 sm:gap-3 sm:p-4 lg:flex-row ${i < 3 ? "lg:p-2" : ""}`}
+            className={`flex h-full flex-col gap-1 overflow-hidden rounded-[12px] border-border p-1.5 shadow-sm sm:flex-row sm:gap-3 sm:p-4 lg:flex-row ${i < 3 ? "lg:p-2" : ""}`}
           >
             <div className="h-16 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
@@ -584,7 +584,7 @@ function Services() {
           </Card>
         ))}
 
-        <Card className="relative w-[40vw] min-w-[150px] shrink-0 flex flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-3 shadow-sm sm:w-auto sm:min-w-0 sm:p-4">
+        <Card className="relative flex h-full flex-col overflow-hidden rounded-[12px] border-border bg-secondary/60 p-3 shadow-sm sm:w-auto sm:min-w-0 sm:p-4">
           <h3 className="font-serif text-sm font-semibold text-primary sm:text-base">Are you experiencing?</h3>
           <ul className="mt-2 space-y-2 sm:mt-3 sm:space-y-2">
             {SYMPTOMS.map((s) => (
