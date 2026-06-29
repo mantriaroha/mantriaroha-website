@@ -755,7 +755,7 @@ function Footer() {
       img: contactMaps.url,
       label: "Directions",
       sub: "Find us on map",
-      href: "https://maps.app.goo.gl/AmpGVLWHgNALawMS8?g_st=aw",
+      href: "https://www.google.com/maps/place/OPD+ground+floor,+Mantri+Aroha,+Vasundhara+Hospital,+12-6-36%2F4%2FC,+opp.+KP+Bus+Depot,+Srihari+Nagar,+Pragathi+Nagar,+Moosapet,+Hyderabad,+Telangana+500018/data=!4m2!3m1!1s0x3bcb91359dec03d9:0xf1e2c89241b16d5!18m1!1e1",
       mobile: true,
     },
     {
