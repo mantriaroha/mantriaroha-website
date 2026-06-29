@@ -492,7 +492,7 @@ function WeAreHereForYou() {
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-foreground md:text-base">Family Physician</h3>
               <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground md:text-xs">
-                General health consultations, test reports, preventive care & second opinions.
+                General consultations, test reports, preventive care & second opinions.
               </p>
             </div>
           </div>
