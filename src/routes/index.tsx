@@ -253,12 +253,6 @@ const SERVICES: ServiceItem[] = [
     imageClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "Online Consultation",
-    titleMobile: (
-      <>
-        Online
-        <br className="sm:hidden" /> Consultation
-      </>
-    ),
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
     descMobile: (
