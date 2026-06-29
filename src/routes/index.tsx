@@ -359,7 +359,7 @@ function Header() {
           <img
             src={logoFull.url}
             alt="Mantri Aroha Clinic"
-            className="h-9 w-auto shrink-0 md:h-[72px]"
+            className="h-[50px] w-auto shrink-0 md:h-[72px]"
             loading="eager"
           />
           <span className="min-w-0">
