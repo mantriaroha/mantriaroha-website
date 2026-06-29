@@ -180,7 +180,22 @@ const TRUST = [
   { img: iconQuitSmoking.url, label: "Preventive care", sub: "for a healthier you" },
 ];
 
-const SERVICES = [
+type ServiceItem = {
+  image: string;
+  imageDesktop: string;
+  imageClass?: string;
+  imageDesktopClass?: string;
+  imageMobile?: string;
+  imageMobileClass?: string;
+  title: string;
+  titleMobile?: ReactNode;
+  titleSub?: string;
+  titleTe?: string;
+  desc: string;
+  descMobile?: ReactNode;
+};
+
+const SERVICES: ServiceItem[] = [
   {
     image: serviceOnline.url,
     imageDesktop: serviceOnlineDesktop.url,
