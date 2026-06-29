@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
   Activity,
   ClipboardList,
@@ -180,15 +180,45 @@ const TRUST = [
   { img: iconQuitSmoking.url, label: "Preventive care", sub: "for a healthier you" },
 ];
 
-const SERVICES = [
+type ServiceItem = {
+  image: string;
+  imageDesktop: string;
+  imageClass?: string;
+  imageDesktopClass?: string;
+  imageMobile?: string;
+  imageMobileClass?: string;
+  title: string;
+  titleMobile?: ReactNode;
+  titleSub?: string;
+  titleTe?: string;
+  desc: string;
+  descMobile?: ReactNode;
+};
+
+const SERVICES: ServiceItem[] = [
   {
     image: serviceOnline.url,
     imageDesktop: serviceOnlineDesktop.url,
     imageClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "Online Consultation",
+    titleMobile: (
+      <>
+        Online
+        <br className="sm:hidden" /> Consultation
+      </>
+    ),
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
+    descMobile: (
+      <>
+        Get expert advice from
+        <br className="sm:hidden" />
+        the comfort of your home.
+        <br className="sm:hidden" />
+        Book a video call today.
+      </>
+    ),
   },
   {
     image: serviceClinic.url,
@@ -425,7 +455,7 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-2.5">
+    <section className="mx-auto max-w-7xl px-4 pb-1.5 pt-3 md:px-8 md:py-2.5">
       <div className="rounded-[10px] border border-border bg-card p-2 shadow-sm md:p-3">
         {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
         <ul className="flex gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:divide-x md:divide-border">
@@ -456,9 +486,9 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
+    <section id="services" className="mx-auto max-w-7xl px-4 pt-1.5 pb-3 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
-<div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
+<div className="flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s, i) => (
           <Card
             key={s.title}
@@ -481,13 +511,17 @@ function Services() {
             <div className="flex min-w-0 flex-1 flex-col justify-between items-center text-center lg:items-start lg:text-left">
               <div>
                 <h3 className="font-serif text-sm font-semibold leading-tight text-primary sm:text-lg">
-                  {s.title}
+                  <span className="sm:hidden">{s.titleMobile || s.title}</span>
+                  <span className="hidden sm:inline">{s.title}</span>
                 </h3>
                 {s.titleSub && (
                   <p className="mt-0.5 text-[10px] leading-snug text-primary/80 sm:text-[11px]">{s.titleSub}</p>
                 )}
                 <p className="mt-1 text-[11px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
-                <p className="mt-2 text-[11px] leading-snug text-muted-foreground sm:text-[13px]">{s.desc}</p>
+                <p className="mt-2 text-[11px] leading-snug text-muted-foreground sm:text-[13px]">
+                  <span className="sm:hidden">{s.descMobile || s.desc}</span>
+                  <span className="hidden sm:inline">{s.desc}</span>
+                </p>
               </div>
               <Button
                 asChild
