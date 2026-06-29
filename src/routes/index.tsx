@@ -410,7 +410,7 @@ function Hero() {
           <div className="md:order-1">
             <div className="mt-1.5 md:mt-4">
               <p className="text-[15px] font-bold leading-tight text-foreground md:text-3xl">
-                Dr. Mantri Vijaya Bhaskar
+                Dr. Mantri Vijaya Bhaskar{" "}
                 <span className="ml-1 align-middle text-[9px] font-medium text-foreground/80 md:hidden">
                   (Chest Physician)
                 </span>
