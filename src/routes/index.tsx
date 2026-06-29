@@ -324,7 +324,7 @@ function Header() {
             loading="eager"
           />
           <span className="min-w-0">
-            <span className="block truncate text-[17px] font-semibold text-foreground md:text-[22px] md:leading-tight">
+            <span className="block truncate text-[14px] font-semibold text-foreground md:text-[22px] md:leading-tight">
               Mantri Aroha Clinic
             </span>
             <span className="block truncate text-[10px] italic text-muted-foreground md:text-[11px]">
