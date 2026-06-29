@@ -471,9 +471,9 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-6">
+    <section id="services" className="mx-auto max-w-7xl px-4 pt-1.5 pb-3 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
-<div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
+<div className="flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s, i) => (
           <Card
             key={s.title}
@@ -496,13 +496,17 @@ function Services() {
             <div className="flex min-w-0 flex-1 flex-col justify-between items-center text-center lg:items-start lg:text-left">
               <div>
                 <h3 className="font-serif text-sm font-semibold leading-tight text-primary sm:text-lg">
-                  {s.title}
+                  <span className="sm:hidden">{(s as typeof s & { titleMobile?: React.ReactNode }).titleMobile || s.title}</span>
+                  <span className="hidden sm:inline">{s.title}</span>
                 </h3>
                 {s.titleSub && (
                   <p className="mt-0.5 text-[10px] leading-snug text-primary/80 sm:text-[11px]">{s.titleSub}</p>
                 )}
                 <p className="mt-1 text-[11px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
-                <p className="mt-2 text-[11px] leading-snug text-muted-foreground sm:text-[13px]">{s.desc}</p>
+                <p className="mt-2 text-[11px] leading-snug text-muted-foreground sm:text-[13px]">
+                  <span className="sm:hidden">{(s as typeof s & { descMobile?: React.ReactNode }).descMobile || s.desc}</span>
+                  <span className="hidden sm:inline">{s.desc}</span>
+                </p>
               </div>
               <Button
                 asChild
