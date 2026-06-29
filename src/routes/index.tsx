@@ -46,8 +46,6 @@ import serviceOnlineDesktop from "@/assets/service-online-desktop.png.asset.json
 import serviceClinicDesktop from "@/assets/service-clinic-desktop.png.asset.json";
 import servicePftDesktop from "@/assets/service-pft-desktop.png.asset.json";
 import servicePftMobile from "@/assets/service-pft-mobile.png.asset.json";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export const Route = createFileRoute("/")({
   head: () => ({
