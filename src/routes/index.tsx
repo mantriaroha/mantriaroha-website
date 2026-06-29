@@ -406,7 +406,7 @@ function Hero() {
     <section className="bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
-        <div className="grid grid-cols-[1fr_38%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
+        <div className="grid grid-cols-[1fr_45%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
             <div className="mt-1.5 md:mt-4">
               <p className="text-[14px] font-bold leading-tight text-foreground md:text-3xl">
