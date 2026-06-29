@@ -605,6 +605,63 @@ function Services() {
   );
 }
 
+function WeAreHereForYou() {
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-4">
+      <div className="rounded-[12px] border border-border bg-card p-3 shadow-sm md:p-4">
+        {/* Title with decorative lines */}
+        <div className="mb-3 flex items-center justify-center gap-2 md:mb-4">
+          <span className="h-px w-8 bg-border md:w-16" />
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+          <h2 className="font-serif text-sm font-semibold text-foreground md:text-base">
+            We are here for you
+          </h2>
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+          <span className="h-px w-8 bg-border md:w-16" />
+        </div>
+
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 md:divide-x md:divide-border">
+          {/* Chest Physician */}
+          <div className="flex items-center gap-3 md:gap-4 md:px-4">
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
+              <img
+                src={iconLungs.url}
+                alt=""
+                className="h-7 w-7 object-contain md:h-9 md:w-9"
+                loading="lazy"
+              />
+            </div>
+            <div className="min-w-0">
+              <h3 className="text-sm font-semibold text-foreground md:text-base">Chest Physician</h3>
+              <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground md:text-xs">
+                Specializing in COPD, asthma, chronic cough, allergies, and smoking cessation.
+              </p>
+            </div>
+          </div>
+
+          {/* Family Physician */}
+          <div className="flex items-center gap-3 md:gap-4 md:px-4">
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
+              <img
+                src={iconFamily.url}
+                alt=""
+                className="h-7 w-7 object-contain md:h-9 md:w-9"
+                loading="lazy"
+              />
+            </div>
+            <div className="min-w-0">
+              <h3 className="text-sm font-semibold text-foreground md:text-base">Family Physician</h3>
+              <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground md:text-xs">
+                Available for general health consultations, test report reviews, preventive care, and second opinions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function LibrarySection() {
   const [openItem, setOpenItem] = useState<typeof LIBRARY[number] | null>(null);
   const [idx, setIdx] = useState(0);
@@ -836,11 +893,14 @@ function HomePage() {
       <main className="pb-24 md:pb-0">
         <Hero />
         <div className="flex flex-col">
-          <div className="order-2 md:order-1">
+          <div className="order-3 md:order-1">
             <TrustStrip />
           </div>
           <div className="order-1 md:order-2">
             <Services />
+          </div>
+          <div className="order-2 md:order-3">
+            <WeAreHereForYou />
           </div>
         </div>
         <LibrarySection />
