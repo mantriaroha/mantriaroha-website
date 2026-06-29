@@ -423,7 +423,7 @@ function Hero() {
                 M.B.B.S., DTCD (Chest Medicine)
               </p>
             </div>
-            <h1 className="mt-1 font-script text-[18px] font-semibold leading-[1.05] tracking-tight text-primary md:mt-4 md:text-4xl lg:text-5xl">
+            <h1 className="mt-2 font-script text-[20px] font-semibold leading-[1.05] tracking-tight text-primary md:mt-4 md:text-4xl lg:text-5xl">
               Helping you breathe better every day
             </h1>
             <svg className="mt-1 h-2 w-24 text-primary md:mt-2 md:w-40" viewBox="0 0 100 12" fill="none" aria-hidden>
