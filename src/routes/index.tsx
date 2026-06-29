@@ -208,7 +208,7 @@ export const Route = createFileRoute("/")({
 const WHATSAPP_URL = "https://wa.me/919032525189";
 const CALL_URL = "tel:+919032525189";
 const EMAIL_URL = "mailto:mantriaroha@gmail.com";
-const MAPS_URL = "https://maps.google.com/?q=Mantri+Aroha+Clinic";
+const MAPS_URL = "https://maps.app.goo.gl/AmpGVLWHgNALawMS8?g_st=aw";
 const YOUTUBE_URL = "https://www.youtube.com/@mantriaroha";
 const TELEGRAM_URL = "https://t.me/+919032525189";
 const BOOK_HREF = "#book";
