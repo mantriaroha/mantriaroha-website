@@ -384,6 +384,13 @@ function Header() {
 function HeroVisual() {
   return (
     <div className="relative mx-auto w-full min-h-[110px] max-sm:min-h-[132px] max-w-sm sm:aspect-square">
+      {/* Background halo + ring — desktop only */}
+      <div className="absolute inset-0 hidden place-items-center sm:grid" aria-hidden>
+        <div className="aspect-square h-full w-auto rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
+      </div>
+      <div className="absolute inset-2 hidden place-items-center sm:grid" aria-hidden>
+        <div className="aspect-square h-full w-auto rounded-full border border-primary/15" />
+      </div>
       <img
         src={doctorTransparent.url}
         alt="Dr Mantri Vijaya Bhaskar"
@@ -594,7 +601,7 @@ function WeAreHereForYou() {
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-foreground md:text-base">Family Physician</h3>
               <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground md:text-xs">
-                General health consultations, test reports, preventive care, and second opinions.
+                General health consultations, test reports, preventive care & second opinions.
               </p>
             </div>
           </div>
@@ -695,7 +702,7 @@ function About() {
           <DoctorPortrait shape="square" />
         </div>
         <div>
-          <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">About Dr Mantri Vijaya Bhaskar</h2>
+          <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">Dr Mantri Vijaya Bhaskar</h2>
           <p className="mt-2 text-foreground/80">
             Helping patients understand and manage respiratory illnesses through evidence-based care, clear
             communication, and compassionate listening.
