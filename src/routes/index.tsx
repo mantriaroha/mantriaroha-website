@@ -613,46 +613,46 @@ function WeAreHereForYou() {
         <div className="mb-3 flex items-center justify-center gap-2 md:mb-4">
           <span className="h-px w-8 bg-border md:w-16" />
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          <h2 className="font-serif text-sm font-semibold text-foreground md:text-base">
+          <h2 className="font-serif text-xs font-semibold text-foreground md:text-base">
             We are here for you
           </h2>
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />
           <span className="h-px w-8 bg-border md:w-16" />
         </div>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 md:divide-x md:divide-border">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 md:divide-x md:divide-border">
           {/* Chest Physician */}
-          <div className="flex items-center gap-3 md:gap-4 md:px-4">
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
+          <div className="flex items-center gap-2 md:gap-4 md:px-4">
+            <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
               <img
                 src={iconLungs.url}
                 alt=""
-                className="h-7 w-7 object-contain md:h-9 md:w-9"
+                className="h-5 w-5 object-contain md:h-9 md:w-9"
                 loading="lazy"
               />
             </div>
             <div className="min-w-0">
-              <h3 className="text-sm font-semibold text-foreground md:text-base">Chest Physician</h3>
-              <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground md:text-xs">
-                Specializing in COPD, asthma, chronic cough, allergies, and smoking cessation.
+              <h3 className="text-xs font-semibold text-foreground md:text-base">Chest Physician</h3>
+              <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground md:text-xs">
+                COPD, asthma, chronic cough, allergies, and smoking cessation.
               </p>
             </div>
           </div>
 
           {/* Family Physician */}
-          <div className="flex items-center gap-3 md:gap-4 md:px-4">
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
+          <div className="flex items-center gap-2 md:gap-4 md:px-4">
+            <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
               <img
                 src={iconFamily.url}
                 alt=""
-                className="h-7 w-7 object-contain md:h-9 md:w-9"
+                className="h-5 w-5 object-contain md:h-9 md:w-9"
                 loading="lazy"
               />
             </div>
             <div className="min-w-0">
-              <h3 className="text-sm font-semibold text-foreground md:text-base">Family Physician</h3>
-              <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground md:text-xs">
-                Available for general health consultations, test report reviews, preventive care, and second opinions.
+              <h3 className="text-xs font-semibold text-foreground md:text-base">Family Physician</h3>
+              <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground md:text-xs">
+                General health consultations, test reports, preventive care, and second opinions.
               </p>
             </div>
           </div>
