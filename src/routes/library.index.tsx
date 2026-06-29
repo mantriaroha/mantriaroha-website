@@ -136,7 +136,13 @@ function LibraryIndex() {
                     key={currentSrc}
                     src={currentSrc}
                     alt={selected.label}
+                    ref={(el) => {
+                      if (el && el.complete && el.naturalWidth > 0) {
+                        setLoaded((p) => (p[currentSrc] ? p : { ...p, [currentSrc]: true }));
+                      }
+                    }}
                     onLoad={() => setLoaded((p) => ({ ...p, [currentSrc]: true }))}
+                    onError={() => setLoaded((p) => ({ ...p, [currentSrc]: true }))}
                     className={`h-auto w-full max-w-3xl rounded-md object-contain transition-opacity duration-300 ${
                       loaded[currentSrc] ? "opacity-100" : "opacity-0"
                     }`}
