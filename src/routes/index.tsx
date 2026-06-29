@@ -19,7 +19,9 @@ import {
   Mail,
   Cigarette,
   ArrowRight,
+  ChevronRight,
 } from "lucide-react";
+import { LIBRARY } from "@/lib/library-items";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
