@@ -904,10 +904,10 @@ function HomePage() {
           <div className="order-3 md:order-1">
             <TrustStrip />
           </div>
-          <div className="order-1 md:order-2">
+          <div className="order-2 md:order-2">
             <Services />
           </div>
-          <div className="order-2 md:order-3">
+          <div className="order-1 md:order-3">
             <WeAreHereForYou />
           </div>
         </div>
