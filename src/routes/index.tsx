@@ -5,7 +5,6 @@ import {
   ClipboardList,
   Leaf,
   MapPin,
-  Menu,
   MessageCircle,
   Phone,
   Quote,
@@ -21,14 +20,13 @@ import {
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
+import { Header } from "@/components/Header";
 import { LIBRARY } from "@/lib/library-items";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import doctorPhoto from "@/assets/doctor_image.png.asset.json";
 import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
-import logoFull from "@/assets/logo-full.png.asset.json";
 import iconLungs from "@/assets/icon-lungs.png.asset.json";
 import contactWhatsapp from "@/assets/contact-whatsapp.png.asset.json";
 import contactCall from "@/assets/contact-call.png.asset.json";
