@@ -121,7 +121,7 @@ function LibraryIndex() {
           ))}
         </div>
 
-        <div id="library-viewer" className="mt-8 scroll-mt-4">
+        <div id="library-viewer" className="mt-5 scroll-mt-4">
           <div className="rounded-[12px] border border-border bg-card p-3 md:p-5">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="font-serif text-lg font-semibold text-primary md:text-2xl">{selected.label}</h2>
