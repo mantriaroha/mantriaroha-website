@@ -442,10 +442,6 @@ function Hero() {
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
-            <div className="hidden items-center gap-2 text-primary md:flex">
-              <LungMark className="h-5 w-5 md:h-6 md:w-6" />
-              <span className="text-xs font-medium md:text-sm">A practice built on compassion</span>
-            </div>
             <div className="mt-1.5 md:mt-4">
               <p className="text-[19px] font-bold leading-tight text-foreground md:text-3xl">
                 Dr. Mantri Vijaya Bhaskar
