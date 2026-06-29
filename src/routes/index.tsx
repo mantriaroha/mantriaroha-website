@@ -210,9 +210,9 @@ const BOOK_HREF = "#book";
 const NAV = [
   { label: "Home", href: "#" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  // { label: "Services", href: "#services" },
   { label: "Lung Health Library", href: "#library" },
-  { label: "Book Appointment", href: "#book" },
+  // { label: "Book Appointment", href: "#book" },
   { label: "Contact", href: "#contact" },
 ];
 
