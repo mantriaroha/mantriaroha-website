@@ -100,7 +100,7 @@ export const Route = createFileRoute("/")({
           "Expert respiratory & family care by Dr Mantri Vijaya Bhaskar — asthma, COPD, chronic cough, allergy, PFT/Spirometry. Online & in-clinic consultations. Lung Health Library with easy guides.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://m-a-c.lovable.app/" },
       {
         name: "twitter:title",
         content:
@@ -112,44 +112,95 @@ export const Route = createFileRoute("/")({
           "Trusted chest physician & family doctor. Asthma, COPD, allergy, chronic cough, PFT/Spirometry. Online & in-clinic consultations.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://m-a-c.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalClinic",
-          name: "Mantri Aroha Clinic",
-          alternateName: "Mantri Aroha Respiratory & Family Care",
-          description:
-            "Respiratory and family care clinic offering treatment for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry). Online and in-clinic consultations by Dr Mantri Vijaya Bhaskar.",
-          url: "https://id-preview--5429fbaf-9805-4282-847d-2a78b8ebc6e5.lovable.app/",
-          telephone: "+91-90325-25189",
-          email: "mantriaroha@gmail.com",
-          medicalSpecialty: ["Pulmonary", "FamilyPractice"],
-          availableService: [
-            { "@type": "MedicalProcedure", name: "Online Consultation" },
-            { "@type": "MedicalProcedure", name: "In-Clinic Consultation" },
+          "@graph": [
             {
-              "@type": "MedicalProcedure",
-              name: "Pulmonary Function Test (PFT / Spirometry)",
+              "@type": "MedicalWebPage",
+              "@id": "https://m-a-c.lovable.app/#webpage",
+              url: "https://m-a-c.lovable.app/",
+              name: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+              description:
+                "Consult Dr Mantri Vijaya Bhaskar (MBBS, DTCD) for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry). Online and in-clinic consultations.",
+              inLanguage: "en",
+              isPartOf: { "@id": "https://m-a-c.lovable.app/#website" },
+              about: { "@id": "https://m-a-c.lovable.app/#clinic" },
+              mainEntity: { "@id": "https://m-a-c.lovable.app/#clinic" },
+              medicalAudience: { "@type": "MedicalAudience", audienceType: "Patient" },
+              lastReviewed: "2026-06-29",
+              primaryImageOfPage: {
+                "@type": "ImageObject",
+                url: "https://m-a-c.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
+              },
             },
-            { "@type": "MedicalProcedure", name: "Asthma Management" },
-            { "@type": "MedicalProcedure", name: "COPD Management" },
-            { "@type": "MedicalProcedure", name: "Allergy Evaluation" },
-            { "@type": "MedicalProcedure", name: "Smoking Cessation Counseling" },
+            {
+              "@type": "WebSite",
+              "@id": "https://m-a-c.lovable.app/#website",
+              url: "https://m-a-c.lovable.app/",
+              name: "Mantri Aroha Clinic",
+              inLanguage: "en",
+              publisher: { "@id": "https://m-a-c.lovable.app/#clinic" },
+            },
+            {
+              "@type": "MedicalClinic",
+              "@id": "https://m-a-c.lovable.app/#clinic",
+              name: "Mantri Aroha Clinic",
+              alternateName: "Mantri Aroha Respiratory & Family Care",
+              description:
+                "Respiratory and family care clinic offering treatment for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry).",
+              url: "https://m-a-c.lovable.app/",
+              telephone: "+91-90325-25189",
+              email: "mantriaroha@gmail.com",
+              image:
+                "https://m-a-c.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
+              medicalSpecialty: ["Pulmonary", "FamilyPractice"],
+              areaServed: { "@type": "Country", name: "India" },
+              availableService: [
+                { "@type": "MedicalProcedure", name: "Online Consultation" },
+                { "@type": "MedicalProcedure", name: "In-Clinic Consultation" },
+                {
+                  "@type": "MedicalProcedure",
+                  name: "Pulmonary Function Test (PFT / Spirometry)",
+                },
+                { "@type": "MedicalProcedure", name: "Asthma Management" },
+                { "@type": "MedicalProcedure", name: "COPD Management" },
+                { "@type": "MedicalProcedure", name: "Allergy Evaluation" },
+                { "@type": "MedicalProcedure", name: "Smoking Cessation Counseling" },
+              ],
+              physician: { "@id": "https://m-a-c.lovable.app/#physician" },
+              sameAs: ["https://www.youtube.com/@mantriaroha"],
+            },
+            {
+              "@type": "Physician",
+              "@id": "https://m-a-c.lovable.app/#physician",
+              name: "Dr Mantri Vijaya Bhaskar",
+              medicalSpecialty: ["Pulmonary", "FamilyPractice"],
+              description:
+                "MBBS, DTCD — Chest Physician & Family Physician with 12+ years of experience.",
+              hasCredential: [
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  name: "MBBS",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  name: "DTCD",
+                },
+              ],
+              worksFor: { "@id": "https://m-a-c.lovable.app/#clinic" },
+            },
           ],
-          physician: {
-            "@type": "Physician",
-            name: "Dr Mantri Vijaya Bhaskar",
-            medicalSpecialty: ["Pulmonary", "FamilyPractice"],
-            qualifications: "MBBS, DTCD — Chest Physician & Family Physician",
-          },
-          sameAs: ["https://www.youtube.com/@mantriaroha"],
         }),
       },
     ],
   }),
+
 
   component: HomePage,
 });
