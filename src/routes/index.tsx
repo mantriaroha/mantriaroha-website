@@ -496,7 +496,7 @@ function TrustStrip() {
 function Services() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 py-1.5 md:px-8 md:py-6">
+    <section id="services" className="mx-auto max-w-7xl px-4 py-1.5 md:px-8 md:py-2">
       <h2 className="sr-only">Our Services</h2>
       <div className="grid grid-cols-2 gap-2 pb-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s, i) => (
@@ -691,7 +691,7 @@ function LibrarySection() {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-4">
+    <section id="about" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-2">
       <Card className="grid gap-3 rounded-[12px] border-border p-3 shadow-sm md:grid-cols-[200px_1fr_300px] md:items-center md:gap-4 md:p-4">
         <div className="mx-auto w-40 md:w-full">
           <DoctorPortrait shape="square" />
@@ -770,7 +770,7 @@ function Footer() {
   return (
     <footer
       id="contact"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card shadow-[0_-4px_12px_rgba(0,0,0,0.06)] md:static md:shadow-none"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card shadow-[0_-4px_12px_rgba(0,0,0,0.06)] md:static md:shadow-none md:mt-2"
     >
       <div className="mx-auto max-w-7xl px-2 py-0.5 md:px-8 md:py-3">
         <ul className="grid grid-cols-5 gap-1 md:grid-cols-6 md:gap-0 md:divide-x md:divide-border">
