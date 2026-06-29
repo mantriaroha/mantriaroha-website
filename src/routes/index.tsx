@@ -100,7 +100,7 @@ export const Route = createFileRoute("/")({
           "Expert respiratory & family care by Dr Mantri Vijaya Bhaskar — asthma, COPD, chronic cough, allergy, PFT/Spirometry. Online & in-clinic consultations. Lung Health Library with easy guides.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://m-a-c.lovable.app/" },
+      { property: "og:url", content: "https://mantriaroha.com/" },
       {
         name: "twitter:title",
         content:
@@ -112,7 +112,7 @@ export const Route = createFileRoute("/")({
           "Trusted chest physician & family doctor. Asthma, COPD, allergy, chronic cough, PFT/Spirometry. Online & in-clinic consultations.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://m-a-c.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://mantriaroha.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -121,42 +121,42 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "MedicalWebPage",
-              "@id": "https://m-a-c.lovable.app/#webpage",
-              url: "https://m-a-c.lovable.app/",
+              "@id": "https://mantriaroha.com/#webpage",
+              url: "https://mantriaroha.com/",
               name: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
               description:
                 "Consult Dr Mantri Vijaya Bhaskar (MBBS, DTCD) for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry). Online and in-clinic consultations.",
               inLanguage: "en",
-              isPartOf: { "@id": "https://m-a-c.lovable.app/#website" },
-              about: { "@id": "https://m-a-c.lovable.app/#clinic" },
-              mainEntity: { "@id": "https://m-a-c.lovable.app/#clinic" },
+              isPartOf: { "@id": "https://mantriaroha.com/#website" },
+              about: { "@id": "https://mantriaroha.com/#clinic" },
+              mainEntity: { "@id": "https://mantriaroha.com/#clinic" },
               medicalAudience: { "@type": "MedicalAudience", audienceType: "Patient" },
               lastReviewed: "2026-06-29",
               primaryImageOfPage: {
                 "@type": "ImageObject",
-                url: "https://m-a-c.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
+                url: "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
               },
             },
             {
               "@type": "WebSite",
-              "@id": "https://m-a-c.lovable.app/#website",
-              url: "https://m-a-c.lovable.app/",
+              "@id": "https://mantriaroha.com/#website",
+              url: "https://mantriaroha.com/",
               name: "Mantri Aroha Clinic",
               inLanguage: "en",
-              publisher: { "@id": "https://m-a-c.lovable.app/#clinic" },
+              publisher: { "@id": "https://mantriaroha.com/#clinic" },
             },
             {
               "@type": "MedicalClinic",
-              "@id": "https://m-a-c.lovable.app/#clinic",
+              "@id": "https://mantriaroha.com/#clinic",
               name: "Mantri Aroha Clinic",
               alternateName: "Mantri Aroha Respiratory & Family Care",
               description:
                 "Respiratory and family care clinic offering treatment for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry).",
-              url: "https://m-a-c.lovable.app/",
+              url: "https://mantriaroha.com/",
               telephone: "+91-90325-25189",
               email: "mantriaroha@gmail.com",
               image:
-                "https://m-a-c.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
+                "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
               medicalSpecialty: ["Pulmonary", "FamilyPractice"],
               areaServed: { "@type": "Country", name: "India" },
               availableService: [
@@ -171,12 +171,12 @@ export const Route = createFileRoute("/")({
                 { "@type": "MedicalProcedure", name: "Allergy Evaluation" },
                 { "@type": "MedicalProcedure", name: "Smoking Cessation Counseling" },
               ],
-              physician: { "@id": "https://m-a-c.lovable.app/#physician" },
+              physician: { "@id": "https://mantriaroha.com/#physician" },
               sameAs: ["https://www.youtube.com/@mantriaroha"],
             },
             {
               "@type": "Physician",
-              "@id": "https://m-a-c.lovable.app/#physician",
+              "@id": "https://mantriaroha.com/#physician",
               name: "Dr Mantri Vijaya Bhaskar",
               medicalSpecialty: ["Pulmonary", "FamilyPractice"],
               description:
@@ -193,7 +193,7 @@ export const Route = createFileRoute("/")({
                   name: "DTCD",
                 },
               ],
-              worksFor: { "@id": "https://m-a-c.lovable.app/#clinic" },
+              worksFor: { "@id": "https://mantriaroha.com/#clinic" },
             },
           ],
         }),

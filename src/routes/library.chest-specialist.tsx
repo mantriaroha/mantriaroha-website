@@ -6,12 +6,12 @@ import logoFull from "@/assets/logo-full.png.asset.json";
 export const Route = createFileRoute("/library/chest-specialist")({
   head: () => {
     const url =
-      "https://m-a-c.lovable.app/library/chest-specialist";
+      "https://mantriaroha.com/library/chest-specialist";
     const title =
       "Chest Specialist (Pulmonologist) in Hyderabad — When to Consult | Mantri Aroha Clinic";
     const description =
       "When to see a chest physician: chronic cough, breathlessness, wheezing, asthma, COPD, allergy and sleep apnea. Spirometry / PFT, asthma & COPD plans, smoking cessation and online consultations at Mantri Aroha Clinic.";
-    const image = `https://m-a-c.lovable.app${detailChest.url}`;
+    const image = `https://mantriaroha.com${detailChest.url}`;
     return {
       meta: [
         { title },
@@ -54,14 +54,14 @@ export const Route = createFileRoute("/library/chest-specialist")({
             mainEntity: {
               "@type": "MedicalBusiness",
               name: "Mantri Aroha Clinic",
-              url: "https://m-a-c.lovable.app/",
+              url: "https://mantriaroha.com/",
               medicalSpecialty: "Pulmonary",
             },
             breadcrumb: {
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://m-a-c.lovable.app/" },
-                { "@type": "ListItem", position: 2, name: "Lung Health Library", item: "https://m-a-c.lovable.app/#library" },
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://mantriaroha.com/" },
+                { "@type": "ListItem", position: 2, name: "Lung Health Library", item: "https://mantriaroha.com/#library" },
                 { "@type": "ListItem", position: 3, name: "Chest Specialist", item: url },
               ],
             },

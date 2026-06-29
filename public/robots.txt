@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://m-a-c.lovable.app/sitemap.xml
+Sitemap: https://mantriaroha.com/sitemap.xml
