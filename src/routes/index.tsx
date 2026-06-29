@@ -406,14 +406,16 @@ function Hero() {
     <section className="bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
-        <div className="grid grid-cols-[1fr_30%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
+        <div className="grid grid-cols-[1fr_38%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
             <div className="mt-1.5 md:mt-4">
-              <p className="text-[15px] font-bold leading-tight text-foreground md:text-3xl">
-                Dr. Mantri Vijaya Bhaskar{" "}
-                <span className="ml-1 align-middle text-[9px] font-medium text-foreground/80 md:hidden">
-                  (Chest Physician)
-                </span>
+              <p className="text-[14px] font-bold leading-tight text-foreground md:text-3xl">
+                Dr. Mantri Vijaya Bhaskar
+              </p>
+              <p className="text-[11px] leading-tight text-foreground/80 md:hidden">
+                Chest Physician & Family Physician
+                <br />
+                M.B.B.S., DTCD (Chest Medicine)
               </p>
               <p className="hidden text-[11px] text-foreground/80 md:text-sm md:block">
                 Chest Physician & Family Physician
@@ -421,7 +423,7 @@ function Hero() {
                 M.B.B.S., DTCD (Chest Medicine)
               </p>
             </div>
-            <h1 className="mt-1.5 font-script text-[16px] font-semibold leading-[1.05] tracking-tight text-primary md:mt-4 md:text-4xl lg:text-5xl">
+            <h1 className="mt-1 font-script text-[18px] font-semibold leading-[1.05] tracking-tight text-primary md:mt-4 md:text-4xl lg:text-5xl">
               Helping you breathe better every day
             </h1>
             <svg className="mt-1 h-2 w-24 text-primary md:mt-2 md:w-40" viewBox="0 0 100 12" fill="none" aria-hidden>
