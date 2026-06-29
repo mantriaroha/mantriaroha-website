@@ -253,12 +253,6 @@ const SERVICES: ServiceItem[] = [
     imageClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "Online Consultation",
-    titleMobile: (
-      <>
-        Online
-        <br className="sm:hidden" /> Consultation
-      </>
-    ),
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
     descMobile: (
@@ -446,19 +440,19 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-4 py-0 md:px-8 md:py-10">
 
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
-        <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
+        <div className="grid grid-cols-[1fr_46%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
             <div className="hidden items-center gap-2 text-primary md:flex">
               <LungMark className="h-5 w-5 md:h-6 md:w-6" />
               <span className="text-xs font-medium md:text-sm">A practice built on compassion</span>
             </div>
-            <h1 className="mt-3 font-serif text-[26px] font-semibold leading-[1.05] tracking-tight text-foreground md:mt-4 md:text-4xl lg:text-5xl">
+            <h1 className="mt-1.5 font-serif text-[26px] font-semibold leading-[1.05] tracking-tight text-foreground md:mt-4 md:text-4xl lg:text-5xl">
               Helping you breathe better every day
             </h1>
-            <p className="mt-3 text-[11px] font-medium text-foreground/80 md:mt-4 md:text-sm">
+            <p className="mt-1.5 text-[11px] font-medium text-foreground/80 md:mt-4 md:text-sm">
               Evidence-based care for
             </p>
-            <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-[11px] text-foreground md:text-base">
+            <ul className="mt-0.5 flex flex-wrap gap-x-2 gap-y-1 text-[11px] text-foreground md:text-base">
               {CONDITIONS.map((c, i) => (
                 <li key={c} className="flex items-center gap-2">
                   {i > 0 && <span className="text-primary">•</span>}
@@ -561,7 +555,7 @@ function Services() {
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-between items-center text-center lg:items-start lg:text-left">
               <div>
-                <h3 className="font-serif text-sm font-semibold leading-tight text-primary sm:text-lg">
+                <h3 className="font-serif text-[12px] font-semibold leading-tight tracking-tight text-primary sm:text-lg">
                   <span className="sm:hidden">{s.titleMobile || s.title}</span>
                   <span className="hidden sm:inline">{s.title}</span>
                 </h3>
