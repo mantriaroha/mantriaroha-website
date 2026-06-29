@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { useState, type MouseEvent, type ReactNode } from "react";
 import {
   Activity,
   ClipboardList,
@@ -590,7 +590,7 @@ function About() {
 }
 
 function Footer() {
-  const handleContactClick = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleContactClick = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
     if (!href.startsWith("http")) return;
 
     try {
