@@ -448,17 +448,17 @@ function Hero() {
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
-            <div className="flex items-center gap-2 text-primary">
+            <div className="hidden items-center gap-2 text-primary md:flex">
               <LungMark className="h-5 w-5 md:h-6 md:w-6" />
               <span className="text-xs font-medium md:text-sm">A practice built on compassion</span>
             </div>
             <h1 className="mt-3 font-serif text-[26px] font-semibold leading-[1.05] tracking-tight text-foreground md:mt-4 md:text-4xl lg:text-5xl">
               Helping you breathe better every day
             </h1>
-            <p className="mt-3 text-[13px] font-medium text-foreground/80 md:mt-4 md:text-sm">
+            <p className="mt-3 text-[11px] font-medium text-foreground/80 md:mt-4 md:text-sm">
               Evidence-based care for
             </p>
-            <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-[13px] text-foreground md:text-base">
+            <ul className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-[11px] text-foreground md:text-base">
               {CONDITIONS.map((c, i) => (
                 <li key={c} className="flex items-center gap-2">
                   {i > 0 && <span className="text-primary">•</span>}
@@ -539,13 +539,13 @@ function Services() {
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 pt-1.5 pb-3 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
-<div className="flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
+<div className="flex gap-1 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s, i) => (
           <Card
             key={s.title}
-            className={`flex w-[40vw] min-w-[150px] shrink-0 flex-col gap-2 overflow-hidden rounded-[12px] border-border p-2 shadow-sm sm:w-auto sm:min-w-0 sm:gap-3 sm:p-4 lg:flex-row ${i < 3 ? "lg:p-2" : ""}`}
+            className={`flex w-[40vw] min-w-[150px] shrink-0 flex-col gap-1 overflow-hidden rounded-[12px] border-border p-1.5 shadow-sm sm:w-auto sm:min-w-0 sm:gap-3 sm:p-4 lg:flex-row ${i < 3 ? "lg:p-2" : ""}`}
           >
-            <div className="h-24 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
+            <div className="h-16 w-full shrink-0 overflow-hidden rounded-[10px] bg-secondary/40 sm:h-40 lg:h-auto lg:w-[42%]">
               <img
                 src={s.imageMobile || s.image}
                 alt={s.title}
@@ -576,7 +576,7 @@ function Services() {
               </div>
               <Button
                 asChild
-                className="mt-2 h-8 rounded-[10px] px-3 text-[10px] font-semibold tracking-[0.14em] sm:mt-3 sm:h-9 sm:px-5 sm:text-[11px] lg:mt-2 lg:self-start"
+                className="hidden mt-2 h-8 rounded-[10px] px-3 text-[10px] font-semibold tracking-[0.14em] sm:flex sm:mt-3 sm:h-9 sm:px-5 sm:text-[11px] lg:mt-2 lg:self-start"
               >
                 <a href={BOOK_HREF}>Book Now</a>
               </Button>
@@ -841,8 +841,14 @@ function HomePage() {
       <Header />
       <main className="pb-24 md:pb-0">
         <Hero />
-        <TrustStrip />
-        <Services />
+        <div className="flex flex-col">
+          <div className="order-2 md:order-1">
+            <TrustStrip />
+          </div>
+          <div className="order-1 md:order-2">
+            <Services />
+          </div>
+        </div>
         <LibrarySection />
         <About />
       </main>
