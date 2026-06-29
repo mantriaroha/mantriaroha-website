@@ -187,8 +187,23 @@ const SERVICES = [
     imageClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "Online Consultation",
+    titleMobile: (
+      <>
+        Online
+        <br className="sm:hidden" /> Consultation
+      </>
+    ),
     titleTe: "ఆన్‌లైన్ సంప్రదింపులు",
     desc: "Get expert advice from the comfort of your home.",
+    descMobile: (
+      <>
+        Get expert advice from
+        <br className="sm:hidden" />
+        the comfort of your home.
+        <br className="sm:hidden" />
+        Book a video call today.
+      </>
+    ),
   },
   {
     image: serviceClinic.url,
@@ -425,7 +440,7 @@ function Hero() {
 
 function TrustStrip() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-2.5">
+    <section className="mx-auto max-w-7xl px-4 pb-1.5 pt-3 md:px-8 md:py-2.5">
       <div className="rounded-[10px] border border-border bg-card p-2 shadow-sm md:p-3">
         {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
         <ul className="flex gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:divide-x md:divide-border">
