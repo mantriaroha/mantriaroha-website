@@ -311,25 +311,6 @@ const SYMPTOMS = [
   "Smoking history",
 ];
 
-function LungMark({ className = "h-10 w-10" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden
-    >
-      <path d="M32 14v22" />
-      <path d="M28 22c-2 6-8 8-12 8-2 8 0 18 8 20 4 1 8-2 8-6V22z" />
-      <path d="M36 22c2 6 8 8 12 8 2 8 0 18-8 20-4 1-8-2-8-6V22z" />
-      <path d="M30 18c0-2 1-3 2-3s2 1 2 3" />
-    </svg>
-  );
-}
 
 function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   const radius = shape === "circle" ? "rounded-full" : "rounded-[14px]";
