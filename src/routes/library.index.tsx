@@ -1,9 +1,14 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ChevronRight, Loader2 } from "lucide-react";
 import { LIBRARY, type LibraryItem } from "@/lib/library-items";
 
+type LibrarySearch = { item?: string };
+
 export const Route = createFileRoute("/library/")({
+  validateSearch: (search: Record<string, unknown>): LibrarySearch => ({
+    item: typeof search.item === "string" ? search.item : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Lung Health Library | Mantri Aroha Clinic" },
@@ -26,9 +31,25 @@ export const Route = createFileRoute("/library/")({
 });
 
 function LibraryIndex() {
-  const [selected, setSelected] = useState<LibraryItem | null>(null);
+  const search = Route.useSearch();
+  const navigate = useNavigate({ from: Route.fullPath });
+
+  const initial = useMemo<LibraryItem>(() => {
+    if (search.item) {
+      const match = LIBRARY.find((l) => l.label === search.item);
+      if (match) return match;
+    }
+    return LIBRARY[0];
+  }, [search.item]);
+
+  const [selected, setSelected] = useState<LibraryItem>(initial);
   const [idx, setIdx] = useState(0);
   const [loaded, setLoaded] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    setSelected(initial);
+    setIdx(0);
+  }, [initial]);
 
   const half = Math.ceil(LIBRARY.length / 2);
   const rows = [LIBRARY.slice(0, half), LIBRARY.slice(half)];
@@ -36,9 +57,15 @@ function LibraryIndex() {
   const handleSelect = (item: LibraryItem) => {
     setSelected(item);
     setIdx(0);
+    navigate({ search: { item: item.label }, replace: true });
+    if (typeof window !== "undefined") {
+      requestAnimationFrame(() => {
+        document.getElementById("library-viewer")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   };
 
-  const currentSrc = selected?.details?.[idx];
+  const currentSrc = selected.details?.[idx];
 
   return (
     <main className="min-h-screen bg-background">
@@ -58,7 +85,7 @@ function LibraryIndex() {
           {rows.map((row, rIdx) => (
             <div key={rIdx} className="flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {row.map((l) => {
-                const isActive = selected?.label === l.label;
+                const isActive = selected.label === l.label;
                 if (l.label === "Chest Specialist") {
                   return (
                     <Link
@@ -91,51 +118,44 @@ function LibraryIndex() {
           ))}
         </div>
 
-        <div className="mt-8">
-          {!selected && (
-            <div className="rounded-[12px] border border-dashed border-border bg-card/50 p-8 text-center text-sm text-muted-foreground">
-              Select a topic above to view its guide.
+        <div id="library-viewer" className="mt-8 scroll-mt-4">
+          <div className="rounded-[12px] border border-border bg-card p-3 md:p-5">
+            <div className="mb-3 flex items-center justify-between">
+              <h2 className="font-serif text-lg font-semibold text-primary md:text-2xl">{selected.label}</h2>
+              {selected.details && selected.details.length > 1 && (
+                <div className="flex items-center gap-2">
+                  {selected.details.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setIdx(i)}
+                      className={`h-2 w-2 rounded-full ${i === idx ? "bg-primary" : "bg-muted-foreground/40"}`}
+                      aria-label={`Image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
-          )}
-          {selected && (
-            <div className="rounded-[12px] border border-border bg-card p-3 md:p-5">
-              <div className="mb-3 flex items-center justify-between">
-                <h2 className="font-serif text-lg font-semibold text-primary md:text-2xl">{selected.label}</h2>
-                {selected.details && selected.details.length > 1 && (
-                  <div className="flex items-center gap-2">
-                    {selected.details.map((_, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        onClick={() => setIdx(i)}
-                        className={`h-2 w-2 rounded-full ${i === idx ? "bg-primary" : "bg-muted-foreground/40"}`}
-                        aria-label={`Image ${i + 1}`}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="relative flex min-h-[300px] items-center justify-center md:min-h-[500px]">
-                {currentSrc && !loaded[currentSrc] && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-primary">
-                    <Loader2 className="h-8 w-8 animate-spin" />
-                    <span className="text-xs text-muted-foreground">Loading…</span>
-                  </div>
-                )}
-                {currentSrc && (
-                  <img
-                    key={currentSrc}
-                    src={currentSrc}
-                    alt={selected.label}
-                    onLoad={() => setLoaded((p) => ({ ...p, [currentSrc]: true }))}
-                    className={`h-auto w-full max-w-3xl rounded-md object-contain transition-opacity duration-300 ${
-                      loaded[currentSrc] ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                )}
-              </div>
+            <div className="relative flex min-h-[300px] items-center justify-center md:min-h-[500px]">
+              {currentSrc && !loaded[currentSrc] && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-primary">
+                  <Loader2 className="h-8 w-8 animate-spin" />
+                  <span className="text-xs text-muted-foreground">Loading…</span>
+                </div>
+              )}
+              {currentSrc && (
+                <img
+                  key={currentSrc}
+                  src={currentSrc}
+                  alt={selected.label}
+                  onLoad={() => setLoaded((p) => ({ ...p, [currentSrc]: true }))}
+                  className={`h-auto w-full max-w-3xl rounded-md object-contain transition-opacity duration-300 ${
+                    loaded[currentSrc] ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              )}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </main>
