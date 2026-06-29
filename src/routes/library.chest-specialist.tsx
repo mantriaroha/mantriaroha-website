@@ -11,7 +11,7 @@ export const Route = createFileRoute("/library/chest-specialist")({
       "Chest Specialist (Pulmonologist) in Hyderabad — When to Consult | Mantri Aroha Clinic";
     const description =
       "When to see a chest physician: chronic cough, breathlessness, wheezing, asthma, COPD, allergy and sleep apnea. Spirometry / PFT, asthma & COPD plans, smoking cessation and online consultations at Mantri Aroha Clinic.";
-    const image = detailChest.url;
+    const image = `https://m-a-c.lovable.app${detailChest.url}`;
     return {
       meta: [
         { title },
