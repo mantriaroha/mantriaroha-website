@@ -577,22 +577,38 @@ function LibrarySection() {
         </a>
       </div>
       <div className="grid grid-cols-2 gap-2 md:flex md:gap-3 md:overflow-x-auto md:pb-2 md:[scrollbar-width:none] md:[&::-webkit-scrollbar]:hidden">
-        {LIBRARY.map((l) => (
-          <button
-            key={l.label}
-            type="button"
-            onClick={() => {
-              if (l.details && l.details.length > 0) {
-                setIdx(0);
-                setOpenItem(l);
-              }
-            }}
-            className="flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-left text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm"
-          >
-            <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
-            <span className="md:text-center">{l.label}</span>
-          </button>
-        ))}
+        {LIBRARY.map((l) => {
+          const cardClass =
+            "flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-left text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm";
+          const inner = (
+            <>
+              <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
+              <span className="md:text-center">{l.label}</span>
+            </>
+          );
+          if (l.label === "Chest Specialist") {
+            return (
+              <Link key={l.label} to="/library/chest-specialist" className={cardClass}>
+                {inner}
+              </Link>
+            );
+          }
+          return (
+            <button
+              key={l.label}
+              type="button"
+              onClick={() => {
+                if (l.details && l.details.length > 0) {
+                  setIdx(0);
+                  setOpenItem(l);
+                }
+              }}
+              className={cardClass}
+            >
+              {inner}
+            </button>
+          );
+        })}
       </div>
       <Dialog open={!!openItem} onOpenChange={(o) => !o && setOpenItem(null)}>
         <DialogContent className="max-w-4xl max-h-[92vh] overflow-y-auto p-2 sm:p-4">
