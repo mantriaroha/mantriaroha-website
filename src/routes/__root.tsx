@@ -103,11 +103,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Expert respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
       },
-      { property: "og:image", content: "https://id-preview--5429fbaf-9805-4282-847d-2a78b8ebc6e5.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp" },
+      { property: "og:image", content: "https://m-a-c.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp" },
       { property: "og:image:width", content: "1536" },
       { property: "og:image:height", content: "1024" },
       { property: "og:image:alt", content: "Mantri Aroha Clinic — Family Doctor: Your Health. Our Priority." },
-      { name: "twitter:image", content: "https://id-preview--5429fbaf-9805-4282-847d-2a78b8ebc6e5.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp" },
+      { name: "twitter:image", content: "https://m-a-c.lovable.app/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
