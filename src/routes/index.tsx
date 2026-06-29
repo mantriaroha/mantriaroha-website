@@ -357,10 +357,10 @@ function Header() {
             loading="eager"
           />
           <span className="min-w-0">
-            <span className="block truncate text-sm font-semibold text-foreground md:text-base">
+            <span className="block truncate text-[19px] font-semibold text-foreground md:text-base">
               Mantri Aroha Clinic
             </span>
-            <span className="block truncate text-[11px] italic text-muted-foreground md:text-sm">
+            <span className="block truncate text-[8px] italic text-muted-foreground md:text-sm">
               Care with Compassion
             </span>
             <span className="hidden text-[11px] text-muted-foreground md:block">
