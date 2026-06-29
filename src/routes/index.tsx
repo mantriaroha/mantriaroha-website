@@ -893,14 +893,16 @@ function HomePage() {
       <main className="pb-24 md:pb-0">
         <Hero />
         <div className="flex flex-col">
-          <div className="order-2 md:order-1">
+          <div className="order-3 md:order-1">
             <TrustStrip />
           </div>
           <div className="order-1 md:order-2">
             <Services />
           </div>
+          <div className="order-2 md:order-3">
+            <WeAreHereForYou />
+          </div>
         </div>
-        <WeAreHereForYou />
         <LibrarySection />
         <About />
       </main>
