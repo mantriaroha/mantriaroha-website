@@ -75,8 +75,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+        title: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
       },
       {
         name: "description",
@@ -91,8 +90,7 @@ export const Route = createFileRoute("/")({
       { name: "robots", content: "index, follow" },
       {
         property: "og:title",
-        content:
-          "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+        content: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
       },
       {
         property: "og:description",
@@ -103,8 +101,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://mantriaroha.com/" },
       {
         name: "twitter:title",
-        content:
-          "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+        content: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
       },
       {
         name: "twitter:description",
@@ -155,8 +152,7 @@ export const Route = createFileRoute("/")({
               url: "https://mantriaroha.com/",
               telephone: "+91-90325-25189",
               email: "mantriaroha@gmail.com",
-              image:
-                "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
+              image: "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
               medicalSpecialty: ["Pulmonary", "FamilyPractice"],
               areaServed: { "@type": "Country", name: "India" },
               availableService: [
@@ -179,8 +175,7 @@ export const Route = createFileRoute("/")({
               "@id": "https://mantriaroha.com/#physician",
               name: "Dr Mantri Vijaya Bhaskar",
               medicalSpecialty: ["Pulmonary", "FamilyPractice"],
-              description:
-                "MBBS, DTCD — Chest Physician & Family Physician with 12+ years of experience.",
+              description: "MBBS, DTCD — Chest Physician & Family Physician with 12+ years of experience.",
               hasCredential: [
                 {
                   "@type": "EducationalOccupationalCredential",
@@ -200,7 +195,6 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-
 
   component: HomePage,
 });
@@ -302,15 +296,7 @@ const LIBRARY: { img: string; label: string; details?: string[] }[] = [
   { img: libChestSpecialist.url, label: "Chest Specialist", details: [detailChest.url] },
 ];
 
-
-const SYMPTOMS = [
-  "Persistent cough",
-  "Breathlessness",
-  "Wheezing",
-  "Chest tightness",
-  "Smoking history",
-];
-
+const SYMPTOMS = ["Persistent cough", "Breathlessness", "Wheezing", "Chest tightness", "Smoking history"];
 
 function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   const radius = shape === "circle" ? "rounded-full" : "rounded-[14px]";
@@ -419,7 +405,6 @@ function Hero() {
   return (
     <section className="bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
@@ -482,7 +467,6 @@ function Hero() {
             <HeroVisual />
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -494,18 +478,9 @@ function TrustStrip() {
       <div className="rounded-[10px] border border-border bg-card p-2 shadow-sm md:p-3">
         {/* Mobile: horizontal scroll single row. Desktop: 4-col grid with dividers. */}
         <ul className="flex gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-0 md:overflow-visible md:divide-x md:divide-border">
-
           {TRUST.map((t) => (
-            <li
-              key={t.label}
-              className="flex shrink-0 items-center gap-2 md:shrink md:justify-center md:gap-4 md:px-6"
-            >
-              <img
-                src={t.img}
-                alt=""
-                className="h-7 w-7 shrink-0 object-contain md:h-12 md:w-12"
-                loading="lazy"
-              />
+            <li key={t.label} className="flex shrink-0 items-center gap-2 md:shrink md:justify-center md:gap-4 md:px-6">
+              <img src={t.img} alt="" className="h-7 w-7 shrink-0 object-contain md:h-12 md:w-12" loading="lazy" />
               <span className="min-w-0 whitespace-nowrap text-[10px] leading-tight text-foreground md:whitespace-normal md:text-[15px]">
                 <span className="block font-medium">{t.label}</span>
                 <span className="block font-medium">{t.sub}</span>
@@ -523,7 +498,7 @@ function Services() {
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 py-1.5 md:px-8 md:py-6">
       <h2 className="sr-only">Our Services</h2>
-<div className="grid grid-cols-2 gap-2 pb-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
+      <div className="grid grid-cols-2 gap-2 pb-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-[1fr_1fr_1fr_180px] lg:gap-4">
         {SERVICES.map((s, i) => (
           <Card
             key={s.title}
@@ -585,7 +560,7 @@ function Services() {
               </li>
             ))}
           </ul>
-<Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
+          <Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
             <a href={BOOK_HREF}>Book a consultation</a>
           </Button>
           <Leaf className="pointer-events-none absolute -bottom-3 -right-3 h-20 w-20 rotate-12 text-primary/15" />
@@ -603,12 +578,7 @@ function WeAreHereForYou() {
           {/* Chest Physician */}
           <div className="flex items-center gap-2 md:gap-4 md:px-4">
             <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
-              <img
-                src={iconLungs.url}
-                alt=""
-                className="h-5 w-5 object-contain md:h-9 md:w-9"
-                loading="lazy"
-              />
+              <img src={iconLungs.url} alt="" className="h-5 w-5 object-contain md:h-9 md:w-9" loading="lazy" />
             </div>
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-foreground md:text-base">Chest Physician</h3>
@@ -621,12 +591,7 @@ function WeAreHereForYou() {
           {/* Family Physician */}
           <div className="flex items-center gap-2 md:gap-4 md:px-4">
             <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
-              <img
-                src={iconFamily.url}
-                alt=""
-                className="h-5 w-5 object-contain md:h-9 md:w-9"
-                loading="lazy"
-              />
+              <img src={iconFamily.url} alt="" className="h-5 w-5 object-contain md:h-9 md:w-9" loading="lazy" />
             </div>
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-foreground md:text-base">Family Physician</h3>
@@ -642,7 +607,7 @@ function WeAreHereForYou() {
 }
 
 function LibrarySection() {
-  const [openItem, setOpenItem] = useState<typeof LIBRARY[number] | null>(null);
+  const [openItem, setOpenItem] = useState<(typeof LIBRARY)[number] | null>(null);
   const [idx, setIdx] = useState(0);
   return (
     <section id="library" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-3">
@@ -724,29 +689,21 @@ function LibrarySection() {
   );
 }
 
-
 function About() {
   return (
     <section id="about" className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-4">
       <Card className="grid gap-3 rounded-[12px] border-border p-3 shadow-sm md:grid-cols-[200px_1fr_300px] md:items-center md:gap-4 md:p-4">
-
         <div className="mx-auto w-40 md:w-full">
           <DoctorPortrait shape="square" />
         </div>
         <div>
-          <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">
-            About Dr Mantri Vijaya Bhaskar
-          </h2>
+          <h2 className="font-serif text-2xl font-semibold text-primary md:text-3xl">About Dr Mantri Vijaya Bhaskar</h2>
           <p className="mt-2 text-foreground/80">
-            Helping patients understand and manage respiratory illnesses through evidence-based
-            care, clear communication, and compassionate listening.
+            Helping patients understand and manage respiratory illnesses through evidence-based care, clear
+            communication, and compassionate listening.
           </p>
-          <p className="mt-3 text-sm font-medium text-foreground">
-            MBBS, DTCD, Chest Physician &amp; Family Physician
-          </p>
-          <p className="text-sm text-muted-foreground">
-            12+ years of experience in Respiratory &amp; Family Medicine
-          </p>
+          <p className="mt-3 text-sm font-medium text-foreground">MBBS, DTCD, Chest Physician &amp; Family Physician</p>
+          <p className="text-sm text-muted-foreground">20+ years of experience in Respiratory &amp; Family Medicine</p>
         </div>
         <blockquote className="rounded-[10px] border border-border bg-secondary/60 p-4">
           <div className="flex items-center gap-2 text-primary">
@@ -754,9 +711,9 @@ function About() {
             <span className="font-serif text-lg font-semibold">Doctor&rsquo;s Promise</span>
           </div>
           <p className="mt-2 text-sm text-foreground/80">
-            Every patient deserves to understand their illness before making treatment decisions.
-            This website is my commitment to providing simple, evidence-based and compassionate
-            respiratory health information for patients and families.
+            Every patient deserves to understand their illness before making treatment decisions. This website is my
+            commitment to providing simple, evidence-based and compassionate respiratory health information for patients
+            and families.
           </p>
           <p className="mt-3 text-sm font-medium text-foreground">— Dr Mantri Vijaya Bhaskar</p>
         </blockquote>
@@ -826,19 +783,13 @@ function Footer() {
                 className="flex flex-col items-center gap-1 rounded-[10px] p-1 text-center transition-colors hover:bg-secondary md:flex-row md:gap-3 md:p-2 md:px-4 md:text-left"
               >
                 <span className="grid h-7 w-7 shrink-0 place-items-center md:h-10 md:w-10">
-                  <img
-                    src={a.img}
-                    alt=""
-                    className="h-7 w-7 object-contain md:h-10 md:w-10"
-                  />
+                  <img src={a.img} alt="" className="h-7 w-7 object-contain md:h-10 md:w-10" />
                 </span>
                 <span className="min-w-0">
                   <span className="block text-[10px] font-semibold leading-tight text-foreground md:text-sm">
                     {a.label}
                   </span>
-                  <span className="hidden truncate text-xs text-muted-foreground md:block">
-                    {a.sub}
-                  </span>
+                  <span className="hidden truncate text-xs text-muted-foreground md:block">{a.sub}</span>
                 </span>
               </a>
             </li>
