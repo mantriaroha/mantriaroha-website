@@ -443,7 +443,7 @@ function HeroVisual() {
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto max-w-7xl px-4 py-5 md:px-8 md:py-10">
+      <div className="mx-auto max-w-7xl px-4 py-1.5 md:px-8 md:py-10">
 
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-3 md:grid-cols-2 md:gap-8">
@@ -785,7 +785,7 @@ function Footer() {
       id="contact"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card shadow-[0_-4px_12px_rgba(0,0,0,0.06)] md:static md:shadow-none"
     >
-      <div className="mx-auto max-w-7xl px-2 py-1.5 md:px-8 md:py-3">
+      <div className="mx-auto max-w-7xl px-2 py-0.5 md:px-8 md:py-3">
         <ul className="grid grid-cols-5 gap-1 md:grid-cols-6 md:gap-0 md:divide-x md:divide-border">
           {actions.map((a) => (
             <li key={a.label} className={a.mobile ? "" : "hidden md:list-item"}>
