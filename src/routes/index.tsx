@@ -607,7 +607,7 @@ function Services() {
 
 function WeAreHereForYou() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-2 md:px-8 md:py-4">
+    <section className="mx-auto max-w-7xl px-4 pt-1 pb-2 md:px-8 md:py-4">
       <div className="rounded-[12px] border border-border bg-card p-3 shadow-sm md:p-4">
         {/* Title with decorative lines */}
         <div className="mb-3 flex items-center justify-center gap-2 md:mb-4">
