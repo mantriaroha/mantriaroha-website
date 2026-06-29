@@ -516,33 +516,40 @@ function LibrarySection() {
           View all articles <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
-      <div className="grid grid-cols-2 gap-2 md:flex md:gap-3 md:overflow-x-auto md:pb-2 md:[scrollbar-width:none] md:[&::-webkit-scrollbar]:hidden">
-        {LIBRARY.map((l) => {
-          const cardClass =
-            "group relative flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 pr-6 text-left text-[13px] font-semibold leading-snug text-primary cursor-pointer transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:pr-5 md:justify-center md:text-sm";
-          const inner = (
-            <>
-              <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
-              <span className="md:text-center">{l.label}</span>
-              <ChevronRight
-                aria-hidden
-                className="absolute right-1.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-primary/60 transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
-              />
-            </>
-          );
-          // if (l.label === "Chest Specialist") {
-          //   return (
-          //     <Link key={l.label} to="/library/chest-specialist" className={cardClass}>
-          //       {inner}
-          //     </Link>
-          //   );
-          // }
-          return (
-            <Link key={l.label} to="/library" search={{ item: l.label }} className={cardClass}>
-              {inner}
-            </Link>
-          );
-        })}
+      {/* Mobile: all 11 items in a 2-column grid split into two groups. Desktop: row 1 = 6 items, row 2 = 5 items, each stretched to full width. */}
+      <div className="space-y-2 md:space-y-3">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-6 md:gap-3">
+          {LIBRARY.slice(0, 6).map((l) => {
+            const cardClass =
+              "group relative flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 pr-6 text-left text-[13px] font-semibold leading-snug text-primary cursor-pointer transition-colors hover:border-primary hover:bg-secondary md:justify-center md:px-2 md:py-1.5 md:pr-5 md:text-sm";
+            return (
+              <Link key={l.label} to="/library" search={{ item: l.label }} className={cardClass}>
+                <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
+                <span className="md:text-center">{l.label}</span>
+                <ChevronRight
+                  aria-hidden
+                  className="absolute right-1.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-primary/60 transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                />
+              </Link>
+            );
+          })}
+        </div>
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-3">
+          {LIBRARY.slice(6).map((l) => {
+            const cardClass =
+              "group relative flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 pr-6 text-left text-[13px] font-semibold leading-snug text-primary cursor-pointer transition-colors hover:border-primary hover:bg-secondary md:justify-center md:px-2 md:py-1.5 md:pr-5 md:text-sm";
+            return (
+              <Link key={l.label} to="/library" search={{ item: l.label }} className={cardClass}>
+                <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
+                <span className="md:text-center">{l.label}</span>
+                <ChevronRight
+                  aria-hidden
+                  className="absolute right-1.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-primary/60 transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                />
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
