@@ -456,6 +456,11 @@ function Hero() {
               <p className="text-[11px] text-foreground/80 md:text-sm">
                 Chest Physician (MBBS, DTCD)
               </p>
+              <p className="text-[11px] text-foreground/80 md:text-sm">
+                Chest Physician & Family Physician
+                <br />
+                M.B.B.S., DTCD (Chest Medicine)
+              </p>
             </div>
             <p className="mt-1.5 hidden text-[11px] font-medium text-foreground/80 md:mt-3 md:block md:text-sm">
               Evidence-based care for
