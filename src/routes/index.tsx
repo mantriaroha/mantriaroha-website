@@ -383,7 +383,7 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full min-h-[110px] max-w-sm sm:aspect-square">
+    <div className="relative mx-auto w-full min-h-[110px] max-sm:min-h-[132px] max-w-sm sm:aspect-square">
       {/* Background halo + ring — desktop only */}
       <div className="absolute inset-0 hidden place-items-center sm:grid" aria-hidden>
         <div className="aspect-square h-full w-auto rounded-full bg-[radial-gradient(circle_at_center,theme(colors.primary/15)_0%,theme(colors.primary/8)_55%,transparent_72%)]" />
@@ -406,7 +406,7 @@ function Hero() {
     <section className="bg-secondary/60">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
-        <div className="grid grid-cols-[1fr_38%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
+        <div className="grid grid-cols-[1fr_45%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
           <div className="md:order-1">
             <div className="mt-1.5 md:mt-4">
               <p className="text-[14px] font-bold leading-tight text-foreground md:text-3xl">
