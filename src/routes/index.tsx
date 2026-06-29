@@ -357,10 +357,10 @@ function Header() {
             loading="eager"
           />
           <span className="min-w-0">
-            <span className="block truncate text-[19px] font-semibold text-foreground md:text-base">
+            <span className="block truncate text-[17px] font-semibold text-foreground md:text-base">
               Mantri Aroha Clinic
             </span>
-            <span className="block truncate text-[8px] italic text-muted-foreground md:text-sm">
+            <span className="block truncate text-[10px] italic text-muted-foreground md:text-sm">
               Care with Compassion
             </span>
             <span className="hidden text-[11px] text-muted-foreground md:block">
@@ -446,11 +446,8 @@ function Hero() {
               <LungMark className="h-5 w-5 md:h-6 md:w-6" />
               <span className="text-xs font-medium md:text-sm">A practice built on compassion</span>
             </div>
-            <h1 className="mt-1.5 font-serif text-[26px] font-semibold leading-[1.05] tracking-tight text-foreground md:mt-4 md:text-4xl lg:text-5xl">
-              Helping you breathe better every day
-            </h1>
             <div className="mt-1.5 md:mt-4">
-              <p className="font-serif text-[15px] font-semibold leading-tight text-primary md:text-lg">
+              <p className="text-[19px] font-bold leading-tight text-foreground md:text-3xl">
                 Dr. Mantri Vijaya Bhaskar
               </p>
               <p className="text-[11px] text-foreground/80 md:text-sm">
@@ -459,6 +456,12 @@ function Hero() {
                 M.B.B.S., DTCD (Chest Medicine)
               </p>
             </div>
+            <h1 className="mt-1.5 font-script text-[26px] font-semibold leading-[1.05] tracking-tight text-primary md:mt-4 md:text-4xl lg:text-5xl">
+              Helping you breathe better every day
+            </h1>
+            <svg className="mt-1 h-2 w-28 text-primary md:mt-2 md:w-40" viewBox="0 0 100 12" fill="none" aria-hidden>
+              <path d="M2 10 Q 50 0, 98 10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
             <p className="mt-1.5 hidden text-[11px] font-medium text-foreground/80 md:mt-3 md:block md:text-sm">
               Evidence-based care for
             </p>
