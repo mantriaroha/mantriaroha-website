@@ -511,7 +511,7 @@ function Services() {
             <div className="flex min-w-0 flex-1 flex-col justify-between items-center text-center lg:items-start lg:text-left">
               <div>
                 <h3 className="font-serif text-sm font-semibold leading-tight text-primary sm:text-lg">
-                  <span className="sm:hidden">{(s as typeof s & { titleMobile?: React.ReactNode }).titleMobile || s.title}</span>
+                  <span className="sm:hidden">{s.titleMobile || s.title}</span>
                   <span className="hidden sm:inline">{s.title}</span>
                 </h3>
                 {s.titleSub && (
@@ -519,7 +519,7 @@ function Services() {
                 )}
                 <p className="mt-1 text-[11px] leading-snug text-foreground/80 sm:text-[13px]">{s.titleTe}</p>
                 <p className="mt-2 text-[11px] leading-snug text-muted-foreground sm:text-[13px]">
-                  <span className="sm:hidden">{(s as typeof s & { descMobile?: React.ReactNode }).descMobile || s.desc}</span>
+                  <span className="sm:hidden">{s.descMobile || s.desc}</span>
                   <span className="hidden sm:inline">{s.desc}</span>
                 </p>
               </div>
