@@ -418,7 +418,7 @@ function HeroVisual() {
 function Hero() {
   return (
     <section className="bg-secondary/60">
-      <div className="mx-auto max-w-7xl px-4 py-3 md:px-8 md:py-10">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
 
         {/* Mobile: top row with tagline (left) + image (right). Desktop: 2-col with text/image side by side. */}
         <div className="grid grid-cols-[1fr_46%] items-center gap-1.5 md:grid-cols-2 md:gap-8">
