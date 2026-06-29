@@ -644,8 +644,8 @@ function Footer() {
             <li key={a.label} className={a.mobile ? "" : "hidden md:list-item"}>
               <a
                 href={a.href}
-                target={a.href.startsWith("tel:") || a.href.startsWith("mailto:") ? "_self" : "_blank"}
-                rel="noopener noreferrer"
+                target={a.href.startsWith("http") ? "_blank" : "_self"}
+                rel={a.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="flex flex-col items-center gap-1 rounded-[10px] p-1 text-center transition-colors hover:bg-secondary md:flex-row md:gap-3 md:p-2 md:px-4 md:text-left"
               >
                 <span className="grid h-7 w-7 shrink-0 place-items-center md:h-10 md:w-10">
