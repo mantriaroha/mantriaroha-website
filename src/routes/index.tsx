@@ -19,7 +19,9 @@ import {
   Mail,
   Cigarette,
   ArrowRight,
+  ChevronRight,
 } from "lucide-react";
+import { LIBRARY } from "@/lib/library-items";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -44,30 +46,6 @@ import serviceOnlineDesktop from "@/assets/service-online-desktop.png.asset.json
 import serviceClinicDesktop from "@/assets/service-clinic-desktop.png.asset.json";
 import servicePftDesktop from "@/assets/service-pft-desktop.png.asset.json";
 import servicePftMobile from "@/assets/service-pft-mobile.png.asset.json";
-import libAsthma from "@/assets/lib-asthma.webp.asset.json";
-import libCough from "@/assets/lib-cough.webp.asset.json";
-import libAllergy from "@/assets/lib-allergy.webp.asset.json";
-import libSmoking from "@/assets/lib-smoking.webp.asset.json";
-import libPft from "@/assets/lib-pft.webp.asset.json";
-import libCopd from "@/assets/lib-copd.webp.asset.json";
-import libCopdAsthma from "@/assets/lib-copd_asthma.webp.asset.json";
-import libPollution from "@/assets/lib-pollution.webp.asset.json";
-import libHealthyLungs from "@/assets/lib-healthy_lungs.webp.asset.json";
-import libFamilyDoc from "@/assets/lib-family_doc.webp.asset.json";
-import libChestSpecialist from "@/assets/lib-chest_specialist.webp.asset.json";
-import detailCopd from "@/assets/detail-copd_1_LHL.webp.asset.json";
-import detailAsthma from "@/assets/detail-asthma_1_LHL.webp.asset.json";
-import detailCough from "@/assets/detail-cough_LHL.webp.asset.json";
-import detailAllergy from "@/assets/detail-allergy_LHL.webp.asset.json";
-import detailCopdAsthma from "@/assets/detail-copd_asthma_LHL.webp.asset.json";
-import detailPollution from "@/assets/detail-pollution_LHL.webp.asset.json";
-import detailPft from "@/assets/detail-pft_LHL.webp.asset.json";
-import detailLungs from "@/assets/detail-lungs_LHL.webp.asset.json";
-import detailFamily from "@/assets/detail-fam_health_LHL.webp.asset.json";
-import detailChest from "@/assets/detail-chest_LHL.webp.asset.json";
-import detailAsthma2 from "@/assets/detail-asthma_2_LHL.webp.asset.json";
-import detailCopd2 from "@/assets/detail-copd_2_LHL.webp.asset.json";
-import detailSmoking from "@/assets/detail-smoking_LHL.webp.asset.json";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
@@ -282,19 +260,6 @@ const SERVICES: ServiceItem[] = [
   },
 ];
 
-const LIBRARY: { img: string; label: string; details?: string[] }[] = [
-  { img: libCopd.url, label: "COPD", details: [detailCopd.url, detailCopd2.url] },
-  { img: libAsthma.url, label: "Asthma", details: [detailAsthma.url, detailAsthma2.url] },
-  { img: libCough.url, label: "Cough", details: [detailCough.url] },
-  { img: libAllergy.url, label: "Allergy", details: [detailAllergy.url] },
-  { img: libCopdAsthma.url, label: "COPD & Asthma", details: [detailCopdAsthma.url] },
-  { img: libSmoking.url, label: "Smoking", details: [detailSmoking.url] },
-  { img: libPollution.url, label: "Pollution", details: [detailPollution.url] },
-  { img: libPft.url, label: "PFT", details: [detailPft.url] },
-  { img: libHealthyLungs.url, label: "Healthy Lungs", details: [detailLungs.url] },
-  { img: libFamilyDoc.url, label: "Family Doctor", details: [detailFamily.url] },
-  { img: libChestSpecialist.url, label: "Chest Specialist", details: [detailChest.url] },
-];
 
 const SYMPTOMS = ["Persistent cough", "Breathlessness", "Wheezing", "Chest tightness", "Smoking history"];
 
@@ -620,21 +585,25 @@ function LibrarySection() {
         <h2 className="font-serif text-[18px] font-semibold leading-tight text-primary md:text-3xl">
           Lung Health Library
         </h2>
-        <a
-          href="#library"
+        <Link
+          to="/library"
           className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline md:text-sm"
         >
           View all articles <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
       <div className="grid grid-cols-2 gap-2 md:flex md:gap-3 md:overflow-x-auto md:pb-2 md:[scrollbar-width:none] md:[&::-webkit-scrollbar]:hidden">
         {LIBRARY.map((l) => {
           const cardClass =
-            "flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 text-left text-[13px] font-semibold leading-snug text-primary transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:justify-center md:text-sm";
+            "group relative flex items-center justify-start gap-3 rounded-[12px] border border-border bg-card p-2 pl-4 pr-6 text-left text-[13px] font-semibold leading-snug text-primary cursor-pointer transition-colors hover:border-primary hover:bg-secondary md:w-28 md:shrink-0 md:gap-2 md:p-2 md:pr-5 md:justify-center md:text-sm";
           const inner = (
             <>
               <img src={l.img} alt="" className="h-10 w-10 shrink-0 object-contain md:h-8 md:w-8" loading="lazy" />
               <span className="md:text-center">{l.label}</span>
+              <ChevronRight
+                aria-hidden
+                className="absolute right-1.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-primary/60 transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+              />
             </>
           );
           if (l.label === "Chest Specialist") {
