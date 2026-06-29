@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ChevronRight, Loader2 } from "lucide-react";
+import { Header } from "@/components/Header";
 import { LIBRARY, type LibraryItem } from "@/lib/library-items";
 
 type LibrarySearch = { item?: string };
@@ -68,20 +69,22 @@ function LibraryIndex() {
   const currentSrc = selected.details?.[idx];
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-6 md:px-8 md:py-10">
-        <Link
-          to="/"
-          className="mb-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-        >
-          <ArrowLeft className="h-4 w-4" /> Back to home
-        </Link>
-        <h1 className="font-serif text-2xl font-semibold text-primary md:text-4xl">Lung Health Library</h1>
-        <p className="mt-2 text-sm text-muted-foreground md:text-base">
-          Tap any topic below to view the guide.
-        </p>
+    <>
+      <Header />
+      <main className="min-h-screen bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-4 md:px-8 md:py-6">
+          <Link
+            to="/"
+            className="mb-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          >
+            <ArrowLeft className="h-4 w-4" /> Back to home
+          </Link>
+          <h1 className="font-serif text-2xl font-semibold text-primary md:text-4xl">Lung Health Library</h1>
+          <p className="mt-1 text-sm text-muted-foreground md:text-base">
+            Tap any topic below to view the guide.
+          </p>
 
-        <div className="mt-6 space-y-3">
+          <div className="mt-4 space-y-2">
           {rows.map((row, rIdx) => (
             <div key={rIdx} className="flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {row.map((l) => {
@@ -118,7 +121,7 @@ function LibraryIndex() {
           ))}
         </div>
 
-        <div id="library-viewer" className="mt-8 scroll-mt-4">
+        <div id="library-viewer" className="mt-5 scroll-mt-4">
           <div className="rounded-[12px] border border-border bg-card p-3 md:p-5">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="font-serif text-lg font-semibold text-primary md:text-2xl">{selected.label}</h2>
@@ -159,5 +162,6 @@ function LibraryIndex() {
         </div>
       </div>
     </main>
+    </>
   );
 }
