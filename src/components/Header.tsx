@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import logoFull from "@/assets/logo-full.png.asset.json";
 
-const BOOK_HREF = "#book";
+const BOOK_HREF = "https://hplix.in/HPE37498-2";
 
 const NAV = [
   { label: "Home", href: "/" },
