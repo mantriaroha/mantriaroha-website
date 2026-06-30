@@ -8,7 +8,7 @@
 //     const url =
 //       "https://mantriaroha.com/library/chest-specialist";
 //     const title =
-//       "Chest Specialist (Pulmonologist) in Hyderabad — When to Consult | Mantri Aroha Clinic";
+//       "Chest Specialist (Chest Physician) in Hyderabad — When to Consult | Mantri Aroha Clinic";
 //     const description =
 //       "When to see a chest physician: chronic cough, breathlessness, wheezing, asthma, COPD, allergy and sleep apnea. Spirometry / PFT, asthma & COPD plans, smoking cessation and online consultations at Mantri Aroha Clinic.";
 //     const image = `https://mantriaroha.com${detailChest}`;
@@ -19,7 +19,7 @@
 //         {
 //           name: "keywords",
 //           content:
-//             "chest specialist, pulmonologist, chest physician, asthma doctor, COPD specialist, chronic cough, breathlessness, spirometry, PFT, lung function test, smoking cessation, sleep apnea, allergy, Mantri Aroha Clinic",
+//             "chest specialist, chest physician, asthma doctor, COPD specialist, chronic cough, breathlessness, spirometry, PFT, lung function test, smoking cessation, sleep apnea, allergy, Mantri Aroha Clinic",
 //         },
 //         { property: "og:type", content: "article" },
 //         { property: "og:title", content: title },
@@ -104,7 +104,7 @@
 //           Your Lungs. Our Expertise.
 //         </h1>
 //         <p className="mt-3 text-lg text-muted-foreground md:text-xl">
-//           What a Chest Physician (Pulmonologist) does, when to consult one, and
+//           What a Chest Physician does, when to consult one, and
 //           how specialist lung care helps you breathe — and live — better.
 //         </p>
 
@@ -139,11 +139,10 @@
 //         {/* Body */}
 //         <div className="prose-article mt-10 space-y-6 text-base leading-relaxed text-foreground md:text-lg">
 //           <p>
-//             A <strong>Chest Physician</strong>, also called a{" "}
-//             <em>Pulmonologist</em>, specializes in preventing, diagnosing and
+//             A <strong>Chest Physician</strong> specializes in preventing, diagnosing and
 //             treating all conditions related to your lungs and breathing. From
 //             everyday concerns like a stubborn cough to long-term conditions like
-//             asthma and COPD, a pulmonologist is the doctor trained to look after
+//             asthma and COPD, a chest physician is the doctor trained to look after
 //             the full picture of your respiratory health.
 //           </p>
 

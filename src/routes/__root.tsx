@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Mantri Aroha Clinic — Evidence-based respiratory and family care by Dr Mantri Vijaya Bhaskar. Asthma, COPD, allergy, chronic cough and preventive lung health.",
+          "Mantri Aroha Clinic — Evidence-based consultation and family care by Dr Mantri Vijaya Bhaskar. Asthma, COPD, allergy, chronic cough and preventive lung health.",
       },
       { name: "author", content: "Mantri Aroha Clinic" },
       { property: "og:site_name", content: "Mantri Aroha Clinic" },
@@ -92,17 +92,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Expert respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
+          "Expert consultation and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
       },
       {
         name: "twitter:description",
         content:
-          "Expert respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
+          "Expert consultation and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
       },
       { property: "og:image", content: "https://mantriaroha.com/share-image.webp" },
       { property: "og:image:width", content: "1536" },
       { property: "og:image:height", content: "1024" },
-      { property: "og:image:alt", content: "Mantri Aroha Clinic — Family Doctor: Your Health. Our Priority." },
+      { property: "og:image:alt", content: "Mantri Aroha Clinic — Family Physician: Your Health. Our Priority." },
       { name: "twitter:image", content: "https://mantriaroha.com/share-image.webp" },
     ],
     links: [
