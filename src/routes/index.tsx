@@ -349,7 +349,7 @@ function Hero() {
                 size="lg"
                 className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary"
               >
-                <a href={BOOK_HREF}>
+                <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">
                   <Stethoscope className="mr-2 h-4 w-4" />
                   <span className="flex flex-col items-start leading-tight">
                     <span className="text-sm font-semibold">Book Clinic Visit</span>
