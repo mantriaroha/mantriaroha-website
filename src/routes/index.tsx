@@ -105,7 +105,7 @@ export const Route = createFileRoute("/")({
               lastReviewed: "2026-06-29",
               primaryImageOfPage: {
                 "@type": "ImageObject",
-                url: "https://mantriaroha.com/share-image.webp",
+                url: "https://mantriaroha.com/share-image.jpg",
               },
             },
             {
@@ -126,7 +126,7 @@ export const Route = createFileRoute("/")({
               url: "https://mantriaroha.com/",
               telephone: "+91-90325-25189",
               email: "mantriaroha@gmail.com",
-              image: "https://mantriaroha.com/share-image.webp",
+              image: "https://mantriaroha.com/share-image.jpg",
               medicalSpecialty: ["Pulmonary", "FamilyPractice"],
               areaServed: { "@type": "Country", name: "India" },
               availableService: [
