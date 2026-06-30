@@ -120,9 +120,9 @@ export const Route = createFileRoute("/")({
               "@type": "MedicalClinic",
               "@id": "https://mantriaroha.com/#clinic",
               name: "Mantri Aroha Clinic",
-              alternateName: "Mantri Aroha Respiratory & Family Care",
+              alternateName: "Mantri Aroha Consultation & Family Care",
               description:
-                "Respiratory and family care clinic offering treatment for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry).",
+                "Chest physician and family physician clinic offering treatment for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry).",
               url: "https://mantriaroha.com/",
               telephone: "+91-90325-25189",
               email: "mantriaroha@gmail.com",
