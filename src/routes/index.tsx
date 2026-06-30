@@ -458,7 +458,7 @@ function Services() {
             ))}
           </ul>
           <Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
-            <a href={BOOK_HREF}>Book a consultation</a>
+            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">Book a consultation</a>
           </Button>
           <Leaf className="pointer-events-none absolute -bottom-3 -right-3 h-20 w-20 rotate-12 text-primary/15" />
         </Card>
