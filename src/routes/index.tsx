@@ -180,7 +180,7 @@ const MAPS_URL = "https://maps.app.goo.gl/AmpGVLWHgNALawMS8?g_st=aw";
 
 const YOUTUBE_URL = "https://www.youtube.com/@mantriaroha";
 const TELEGRAM_URL = "https://t.me/+919032525189";
-const BOOK_HREF = "#book";
+const BOOK_HREF = "https://hplix.in/HPE37498-2";
 
 const NAV = [
   { label: "Home", href: "#" },
@@ -335,7 +335,7 @@ function Hero() {
 
             <div className="mt-4 hidden flex-col gap-2 sm:flex sm:flex-row md:mt-5">
               <Button asChild size="lg" className="h-12 rounded-[10px] px-5">
-                <a href={BOOK_HREF}>
+                <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">
                   <Video className="mr-2 h-4 w-4" />
                   <span className="flex flex-col items-start leading-tight">
                     <span className="text-sm font-semibold">Online Consultation</span>
@@ -349,7 +349,7 @@ function Hero() {
                 size="lg"
                 className="h-12 rounded-[10px] border-primary px-5 text-primary hover:bg-secondary"
               >
-                <a href={BOOK_HREF}>
+                <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">
                   <Stethoscope className="mr-2 h-4 w-4" />
                   <span className="flex flex-col items-start leading-tight">
                     <span className="text-sm font-semibold">Book Clinic Visit</span>
@@ -434,7 +434,7 @@ function Services() {
                 asChild
                 className="hidden mt-2 h-8 rounded-[10px] px-3 text-[10px] font-semibold tracking-[0.14em] sm:flex sm:mt-3 sm:h-9 sm:px-5 sm:text-[11px] lg:mt-2 lg:self-start"
               >
-                <a href={BOOK_HREF}>Book Now</a>
+                <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">Book Now</a>
               </Button>
             </div>
           </Card>
@@ -458,7 +458,7 @@ function Services() {
             ))}
           </ul>
           <Button asChild className="mt-auto h-8 w-full rounded-[10px] text-[11px] sm:h-9 sm:text-xs">
-            <a href={BOOK_HREF}>Book a consultation</a>
+            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">Book a consultation</a>
           </Button>
           <Leaf className="pointer-events-none absolute -bottom-3 -right-3 h-20 w-20 rotate-12 text-primary/15" />
         </Card>
