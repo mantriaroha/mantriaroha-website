@@ -51,7 +51,7 @@ export function Header() {
 
         <div className="flex items-center gap-1 md:gap-2">
           <Button asChild className="h-8 rounded-[10px] px-3 text-xs md:h-10 md:px-5 md:text-sm">
-            <a href={BOOK_HREF}>Book a visit</a>
+            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer">Book a visit</a>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
