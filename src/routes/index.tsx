@@ -94,9 +94,9 @@ export const Route = createFileRoute("/")({
               "@type": "MedicalWebPage",
               "@id": "https://mantriaroha.com/#webpage",
               url: "https://mantriaroha.com/",
-              name: "Mantri Aroha Clinic | Pulmonologist & Family Doctor — Asthma, COPD, Allergy Care",
+              name: "Mantri Aroha Clinic | Chest Physician & Family Physician — Asthma, COPD, Allergy Care",
               description:
-                "Consult Dr Mantri Vijaya Bhaskar (MBBS, DTCD) for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry). Online and in-clinic consultations.",
+                "Consult Dr Mantri Vijaya Bhaskar (MBBS, DTCD) for asthma, COPD, chronic cough, allergy, smoking cessation and pulmonary function testing (PFT/Spirometry). Online and in-clinic consultations with a trusted chest physician and family physician.",
               inLanguage: "en",
               isPartOf: { "@id": "https://mantriaroha.com/#website" },
               about: { "@id": "https://mantriaroha.com/#clinic" },
