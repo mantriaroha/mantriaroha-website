@@ -7,15 +7,7 @@
   "background_color": "#F3FEFE",
   "theme_color": "#0F8B8D",
   "icons": [
-    {
-      "src": "/__l5e/assets-v1/427a777c-25fd-471b-86c0-10560db27ad4/favicon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/__l5e/assets-v1/dee6fcdf-839d-42b3-9659-c8fdae0e57dc/favicon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }

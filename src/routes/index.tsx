@@ -25,25 +25,25 @@ import { LIBRARY } from "@/lib/library-items";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import doctorPhoto from "@/assets/doctor_image.png.asset.json";
-import doctorTransparent from "@/assets/doctor_transparent.png.asset.json";
-import iconLungs from "@/assets/icon-lungs.png.asset.json";
-import contactWhatsapp from "@/assets/contact-whatsapp.png.asset.json";
-import contactCall from "@/assets/contact-call.png.asset.json";
-import contactMaps from "@/assets/contact-maps.png.asset.json";
-import contactTelegram from "@/assets/contact-telegram.png.asset.json";
-import contactGmail from "@/assets/contact-gmail.png.asset.json";
-import contactYoutube from "@/assets/contact-youtube.png.asset.json";
-import iconFamily from "@/assets/icon-family.png.asset.json";
-import iconClipboard from "@/assets/icon-clipboard.png.asset.json";
-import iconQuitSmoking from "@/assets/icon-quit-smoking.png.asset.json";
-import serviceOnline from "@/assets/service-online-v2.png.asset.json";
-import serviceClinic from "@/assets/service-clinic-v2.png.asset.json";
-import servicePft from "@/assets/service-pft.png.asset.json";
-import serviceOnlineDesktop from "@/assets/service-online-desktop.png.asset.json";
-import serviceClinicDesktop from "@/assets/service-clinic-desktop.png.asset.json";
-import servicePftDesktop from "@/assets/service-pft-desktop.png.asset.json";
-import servicePftMobile from "@/assets/service-pft-mobile.png.asset.json";
+import doctorPhoto from "@/assets/doctor_image.png";
+import doctorTransparent from "@/assets/doctor_transparent.png";
+import iconLungs from "@/assets/icon-lungs.png";
+import contactWhatsapp from "@/assets/contact-whatsapp.png";
+import contactCall from "@/assets/contact-call.png";
+import contactMaps from "@/assets/contact-maps.png";
+import contactTelegram from "@/assets/contact-telegram.png";
+import contactGmail from "@/assets/contact-gmail.png";
+import contactYoutube from "@/assets/contact-youtube.png";
+import iconFamily from "@/assets/icon-family.png";
+import iconClipboard from "@/assets/icon-clipboard.png";
+import iconQuitSmoking from "@/assets/icon-quit-smoking.png";
+import serviceOnline from "@/assets/service-online-v2.png";
+import serviceClinic from "@/assets/service-clinic-v2.png";
+import servicePft from "@/assets/service-pft.png";
+import serviceOnlineDesktop from "@/assets/service-online-desktop.png";
+import serviceClinicDesktop from "@/assets/service-clinic-desktop.png";
+import servicePftDesktop from "@/assets/service-pft-desktop.png";
+import servicePftMobile from "@/assets/service-pft-mobile.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -105,7 +105,7 @@ export const Route = createFileRoute("/")({
               lastReviewed: "2026-06-29",
               primaryImageOfPage: {
                 "@type": "ImageObject",
-                url: "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
+                url: "https://mantriaroha.com/share-image.webp",
               },
             },
             {
@@ -126,7 +126,7 @@ export const Route = createFileRoute("/")({
               url: "https://mantriaroha.com/",
               telephone: "+91-90325-25189",
               email: "mantriaroha@gmail.com",
-              image: "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp",
+              image: "https://mantriaroha.com/share-image.webp",
               medicalSpecialty: ["Pulmonary", "FamilyPractice"],
               areaServed: { "@type": "Country", name: "India" },
               availableService: [
@@ -194,10 +194,10 @@ const NAV = [
 const CONDITIONS = ["Asthma", "COPD", "Chronic Cough", "Allergy", "Preventive Lung Health"];
 
 const TRUST = [
-  { img: iconLungs.url, label: "Respiratory care", sub: "for all ages" },
-  { img: iconFamily.url, label: "Family doctor", sub: "you can trust" },
-  { img: iconClipboard.url, label: "Second opinion &", sub: "health queries" },
-  { img: iconQuitSmoking.url, label: "Preventive care", sub: "for a healthier you" },
+  { img: iconLungs, label: "Respiratory care", sub: "for all ages" },
+  { img: iconFamily, label: "Family doctor", sub: "you can trust" },
+  { img: iconClipboard, label: "Second opinion &", sub: "health queries" },
+  { img: iconQuitSmoking, label: "Preventive care", sub: "for a healthier you" },
 ];
 
 type ServiceItem = {
@@ -217,8 +217,8 @@ type ServiceItem = {
 
 const SERVICES: ServiceItem[] = [
   {
-    image: serviceOnline.url,
-    imageDesktop: serviceOnlineDesktop.url,
+    image: serviceOnline,
+    imageDesktop: serviceOnlineDesktop,
     imageClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "Online Consultation",
@@ -235,8 +235,8 @@ const SERVICES: ServiceItem[] = [
     ),
   },
   {
-    image: serviceClinic.url,
-    imageDesktop: serviceClinicDesktop.url,
+    image: serviceClinic,
+    imageDesktop: serviceClinicDesktop,
     imageClass: "object-contain",
     imageDesktopClass: "object-cover",
     title: "In-Clinic Consultation",
@@ -244,9 +244,9 @@ const SERVICES: ServiceItem[] = [
     desc: "Personalized evaluation and treatment with advanced diagnostic facilities.",
   },
   {
-    image: servicePft.url,
-    imageMobile: servicePftMobile.url,
-    imageDesktop: servicePftDesktop.url,
+    image: servicePft,
+    imageMobile: servicePftMobile,
+    imageDesktop: servicePftDesktop,
     imageClass: "object-cover",
     imageMobileClass: "object-contain",
     imageDesktopClass: "object-cover",
@@ -264,7 +264,7 @@ function DoctorPortrait({ shape = "circle" }: { shape?: "circle" | "square" }) {
   return (
     <div className={`relative mx-auto aspect-square w-full max-w-md overflow-hidden ${radius}`}>
       <img
-        src={doctorPhoto.url}
+        src={doctorPhoto}
         alt="Dr Mantri Vijaya Bhaskar"
         className="h-full w-full object-cover object-top"
         loading="eager"
@@ -277,7 +277,7 @@ function HeroVisual() {
   return (
     <div className="relative mx-auto w-full min-h-[110px] max-sm:min-h-[132px] max-w-sm sm:aspect-square">
       <img
-        src={doctorTransparent.url}
+        src={doctorTransparent}
         alt="Dr Mantri Vijaya Bhaskar"
         className="relative h-full w-full object-contain object-center"
         loading="eager"
@@ -468,7 +468,7 @@ function WeAreHereForYou() {
           {/* Chest Physician */}
           <div className="flex items-center gap-2 md:gap-4 md:px-4">
             <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
-              <img src={iconLungs.url} alt="" className="h-5 w-5 object-contain md:h-9 md:w-9" loading="lazy" />
+              <img src={iconLungs} alt="" className="h-5 w-5 object-contain md:h-9 md:w-9" loading="lazy" />
             </div>
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-foreground md:text-base">Chest Physician</h3>
@@ -481,7 +481,7 @@ function WeAreHereForYou() {
           {/* Family Physician */}
           <div className="flex items-center gap-2 md:gap-4 md:px-4">
             <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary md:h-16 md:w-16">
-              <img src={iconFamily.url} alt="" className="h-5 w-5 object-contain md:h-9 md:w-9" loading="lazy" />
+              <img src={iconFamily} alt="" className="h-5 w-5 object-contain md:h-9 md:w-9" loading="lazy" />
             </div>
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-foreground md:text-base">Family Physician</h3>
@@ -599,42 +599,42 @@ function Footer() {
 
   const actions = [
     {
-      img: contactWhatsapp.url,
+      img: contactWhatsapp,
       label: "WhatsApp",
       sub: "Message us",
       href: WHATSAPP_URL,
       mobile: true,
     },
     {
-      img: contactCall.url,
+      img: contactCall,
       label: "Call",
       sub: "+91 90325 25189",
       href: CALL_URL,
       mobile: true,
     },
     {
-      img: contactMaps.url,
+      img: contactMaps,
       label: "Directions",
       sub: "Find us on map",
       href: MAPS_URL,
       mobile: true,
     },
     {
-      img: contactTelegram.url,
+      img: contactTelegram,
       label: "Telegram",
       sub: "Chat on Telegram",
       href: TELEGRAM_URL,
       mobile: true,
     },
     {
-      img: contactGmail.url,
+      img: contactGmail,
       label: "Email",
       sub: "mantriaroha@gmail.com",
       href: EMAIL_URL,
       mobile: false,
     },
     {
-      img: contactYoutube.url,
+      img: contactYoutube,
       label: "YouTube",
       sub: "Health talks & more",
       href: YOUTUBE_URL,

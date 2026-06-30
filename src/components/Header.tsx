@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import logoFull from "@/assets/logo-full.png.asset.json";
+import logoFull from "@/assets/logo-full.png";
 
 const BOOK_HREF = "https://hplix.in/HPE37498-2";
 
@@ -19,7 +19,7 @@ export function Header() {
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-0 md:flex md:gap-6 md:px-8 md:py-2">
         <Link to="/" className="flex min-w-0 items-center gap-1 md:gap-2">
           <img
-            src={logoFull.url}
+            src={logoFull}
             alt="Mantri Aroha Clinic"
             className="h-[50px] w-auto shrink-0 md:h-[72px]"
             loading="eager"

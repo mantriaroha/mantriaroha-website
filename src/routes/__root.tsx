@@ -10,10 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import faviconIco from "../assets/favicon.ico.asset.json";
-import favicon32 from "../assets/favicon-32.png.asset.json";
-import favicon180 from "../assets/favicon-180.png.asset.json";
-import favicon192 from "../assets/favicon-192.png.asset.json";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -103,18 +99,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Expert respiratory and family care by Dr Mantri Vijaya Bhaskar — Asthma, COPD, allergy, chronic cough and preventive lung health.",
       },
-      { property: "og:image", content: "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp" },
+      { property: "og:image", content: "https://mantriaroha.com/share-image.webp" },
       { property: "og:image:width", content: "1536" },
       { property: "og:image:height", content: "1024" },
       { property: "og:image:alt", content: "Mantri Aroha Clinic — Family Doctor: Your Health. Our Priority." },
-      { name: "twitter:image", content: "https://mantriaroha.com/__l5e/assets-v1/4f0c9ab7-68e9-4d91-adca-d74d62ef4076/share-image.webp" },
+      { name: "twitter:image", content: "https://mantriaroha.com/share-image.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/x-icon", href: faviconIco.url },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: favicon32.url },
-      { rel: "icon", type: "image/png", sizes: "192x192", href: favicon192.url },
-      { rel: "apple-touch-icon", sizes: "180x180", href: favicon180.url },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/favicon-180.png" },
       { rel: "manifest", href: "/manifest.json" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },

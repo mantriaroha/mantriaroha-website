@@ -1,7 +1,7 @@
 // import { createFileRoute, Link } from "@tanstack/react-router";
 // import { ArrowLeft, CalendarDays, Clock, CheckCircle2 } from "lucide-react";
-// import detailChest from "@/assets/detail-chest_LHL.webp.asset.json";
-// import logoFull from "@/assets/logo-full.png.asset.json";
+// import detailChest from "@/assets/detail-chest_LHL.webp";
+// import logoFull from "@/assets/logo-full.png";
 
 // export const Route = createFileRoute("/library/chest-specialist")({
 //   head: () => {
@@ -11,7 +11,7 @@
 //       "Chest Specialist (Pulmonologist) in Hyderabad — When to Consult | Mantri Aroha Clinic";
 //     const description =
 //       "When to see a chest physician: chronic cough, breathlessness, wheezing, asthma, COPD, allergy and sleep apnea. Spirometry / PFT, asthma & COPD plans, smoking cessation and online consultations at Mantri Aroha Clinic.";
-//     const image = `https://mantriaroha.com${detailChest.url}`;
+//     const image = `https://mantriaroha.com${detailChest}`;
 //     return {
 //       meta: [
 //         { title },
@@ -87,7 +87,7 @@
 //             Back to Home
 //           </Link>
 //           <Link to="/" className="flex items-center gap-2">
-//             <img src={logoFull.url} alt="Mantri Aroha Clinic" className="h-10 w-auto" />
+//             <img src={logoFull} alt="Mantri Aroha Clinic" className="h-10 w-auto" />
 //           </Link>
 //         </div>
 //       </header>
@@ -126,7 +126,7 @@
 //         {/* Hero poster */}
 //         <figure className="mt-8">
 //           <img
-//             src={detailChest.url}
+//             src={detailChest}
 //             alt="Infographic: When to consult a chest physician, conditions managed, services offered, and benefits of lung specialist care."
 //             className="w-full rounded-lg border border-border"
 //             loading="eager"
