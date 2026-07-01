@@ -133,8 +133,13 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {children}
-        <Scripts />
+      {children}
+      <script
+        data-goatcounter="https://mantriaroha.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+      />
+      <Scripts />
       </body>
     </html>
   );
